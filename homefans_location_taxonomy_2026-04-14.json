@@ -1,0 +1,5798 @@
+[
+  {
+    "id": 1185,
+    "name": "A Coruña",
+    "slug": "a-coruna",
+    "parent": 76
+  },
+  {
+    "id": 1226,
+    "name": "Aarau",
+    "slug": "aarau",
+    "parent": 250
+  },
+  {
+    "id": 1239,
+    "name": "Adana",
+    "slug": "adana",
+    "parent": 89
+  },
+  {
+    "id": 544,
+    "name": "Adrogué",
+    "slug": "adrogue",
+    "parent": 60
+  },
+  {
+    "id": 122,
+    "name": "Africa",
+    "slug": "africa",
+    "parent": 0
+  },
+  {
+    "id": 920,
+    "name": "Agadir",
+    "slug": "agadir",
+    "parent": 125
+  },
+  {
+    "id": 894,
+    "name": "Aguascalientes",
+    "slug": "aguascalientes",
+    "parent": 69
+  },
+  {
+    "id": 744,
+    "name": "Ajaccio",
+    "slug": "ajaccio",
+    "parent": 79
+  },
+  {
+    "id": 1136,
+    "name": "Ajdovščina",
+    "slug": "ajdovscina",
+    "parent": 302
+  },
+  {
+    "id": 830,
+    "name": "Ajka",
+    "slug": "ajka",
+    "parent": 118
+  },
+  {
+    "id": 1237,
+    "name": "Alanya",
+    "slug": "alanya",
+    "parent": 89
+  },
+  {
+    "id": 1184,
+    "name": "Albacete",
+    "slug": "albacete",
+    "parent": 76
+  },
+  {
+    "id": 2447,
+    "name": "Albania",
+    "slug": "albania",
+    "parent": 71
+  },
+  {
+    "id": 1333,
+    "name": "Albuquerque",
+    "slug": "albuquerque",
+    "parent": 141
+  },
+  {
+    "id": 1181,
+    "name": "Alcorcón",
+    "slug": "alcorcon",
+    "parent": 76
+  },
+  {
+    "id": 987,
+    "name": "Ålesund",
+    "slug": "alesund",
+    "parent": 264
+  },
+  {
+    "id": 714,
+    "name": "Alexandria",
+    "slug": "alexandria",
+    "parent": 123
+  },
+  {
+    "id": 1103,
+    "name": "Alexandria",
+    "slug": "alexandria-romania",
+    "parent": 132
+  },
+  {
+    "id": 942,
+    "name": "Alkmaar",
+    "slug": "alkmaar",
+    "parent": 130
+  },
+  {
+    "id": 950,
+    "name": "Almelo",
+    "slug": "almelo",
+    "parent": 130
+  },
+  {
+    "id": 949,
+    "name": "Almere",
+    "slug": "almere",
+    "parent": 130
+  },
+  {
+    "id": 1057,
+    "name": "Amadora",
+    "slug": "amadora",
+    "parent": 92
+  },
+  {
+    "id": 706,
+    "name": "Ambato",
+    "slug": "ambato",
+    "parent": 279
+  },
+  {
+    "id": 1180,
+    "name": "Amorebieta-Etxano",
+    "slug": "amorebieta-etxano",
+    "parent": 76
+  },
+  {
+    "id": 131,
+    "name": "Amsterdam",
+    "slug": "amsterdam",
+    "parent": 130
+  },
+  {
+    "id": 1464,
+    "name": "Anaheim",
+    "slug": "anaheim",
+    "parent": 141
+  },
+  {
+    "id": 1005,
+    "name": "Andahuaylas",
+    "slug": "andahuaylas",
+    "parent": 137
+  },
+  {
+    "id": 563,
+    "name": "Anderlecht",
+    "slug": "anderlecht",
+    "parent": 237
+  },
+  {
+    "id": 1182,
+    "name": "Andorra la Vella",
+    "slug": "andorra-la-vella",
+    "parent": 76
+  },
+  {
+    "id": 740,
+    "name": "Angers",
+    "slug": "angers",
+    "parent": 79
+  },
+  {
+    "id": 1245,
+    "name": "Ankara",
+    "slug": "ankara",
+    "parent": 89
+  },
+  {
+    "id": 758,
+    "name": "Annecy",
+    "slug": "annecy",
+    "parent": 79
+  },
+  {
+    "id": 1242,
+    "name": "Antakya",
+    "slug": "antakya",
+    "parent": 89
+  },
+  {
+    "id": 1240,
+    "name": "Antalya",
+    "slug": "antalya",
+    "parent": 89
+  },
+  {
+    "id": 622,
+    "name": "Antofagasta",
+    "slug": "antofagasta",
+    "parent": 139
+  },
+  {
+    "id": 565,
+    "name": "Antwerp",
+    "slug": "antwerp",
+    "parent": 237
+  },
+  {
+    "id": 1083,
+    "name": "Arad",
+    "slug": "arad",
+    "parent": 132
+  },
+  {
+    "id": 997,
+    "name": "Arequipa",
+    "slug": "arequipa",
+    "parent": 137
+  },
+  {
+    "id": 60,
+    "name": "Argentina",
+    "slug": "argentina",
+    "parent": 59
+  },
+  {
+    "id": 626,
+    "name": "Arica",
+    "slug": "arica",
+    "parent": 139
+  },
+  {
+    "id": 1456,
+    "name": "Arlington",
+    "slug": "arlington",
+    "parent": 141
+  },
+  {
+    "id": 648,
+    "name": "Armenia",
+    "slug": "armenia",
+    "parent": 66
+  },
+  {
+    "id": 1051,
+    "name": "Arouca",
+    "slug": "arouca",
+    "parent": 92
+  },
+  {
+    "id": 877,
+    "name": "Ascoli Piceno",
+    "slug": "ascoli-piceno",
+    "parent": 94
+  },
+  {
+    "id": 1468,
+    "name": "Asia",
+    "slug": "asia",
+    "parent": 0
+  },
+  {
+    "id": 725,
+    "name": "Assiut",
+    "slug": "assiut",
+    "parent": 123
+  },
+  {
+    "id": 1677,
+    "name": "Asunción",
+    "slug": "asuncion",
+    "parent": 1676
+  },
+  {
+    "id": 724,
+    "name": "Aswan",
+    "slug": "aswan",
+    "parent": 123
+  },
+  {
+    "id": 234,
+    "name": "Athens",
+    "slug": "athens",
+    "parent": 83
+  },
+  {
+    "id": 844,
+    "name": "Athlone",
+    "slug": "athlone",
+    "parent": 294
+  },
+  {
+    "id": 1292,
+    "name": "Atlanta",
+    "slug": "atlanta",
+    "parent": 141
+  },
+  {
+    "id": 711,
+    "name": "Atuntaqui",
+    "slug": "atuntaqui",
+    "parent": 279
+  },
+  {
+    "id": 770,
+    "name": "Augsburg",
+    "slug": "augsburg",
+    "parent": 87
+  },
+  {
+    "id": 1293,
+    "name": "Austin",
+    "slug": "austin",
+    "parent": 141
+  },
+  {
+    "id": 1427,
+    "name": "Austria",
+    "slug": "austria",
+    "parent": 71
+  },
+  {
+    "id": 739,
+    "name": "Auxerre",
+    "slug": "auxerre",
+    "parent": 79
+  },
+  {
+    "id": 530,
+    "name": "Avellaneda",
+    "slug": "avellaneda",
+    "parent": 60
+  },
+  {
+    "id": 882,
+    "name": "Avellino",
+    "slug": "avellino",
+    "parent": 94
+  },
+  {
+    "id": 1012,
+    "name": "Ayacucho",
+    "slug": "ayacucho",
+    "parent": 137
+  },
+  {
+    "id": 1105,
+    "name": "Bačka Topola",
+    "slug": "backa-topola",
+    "parent": 81
+  },
+  {
+    "id": 1231,
+    "name": "Baden",
+    "slug": "baden",
+    "parent": 250
+  },
+  {
+    "id": 1659,
+    "name": "Bahrain",
+    "slug": "bahrain",
+    "parent": 1468
+  },
+  {
+    "id": 851,
+    "name": "Ballybofey",
+    "slug": "ballybofey",
+    "parent": 294
+  },
+  {
+    "id": 1454,
+    "name": "Baltimore",
+    "slug": "baltimore",
+    "parent": 141
+  },
+  {
+    "id": 1252,
+    "name": "Bandırma",
+    "slug": "bandirma",
+    "parent": 89
+  },
+  {
+    "id": 524,
+    "name": "Banfield",
+    "slug": "banfield",
+    "parent": 60
+  },
+  {
+    "id": 78,
+    "name": "Barcelona",
+    "slug": "barcelona",
+    "parent": 76
+  },
+  {
+    "id": 1055,
+    "name": "Barcelos",
+    "slug": "barcelos",
+    "parent": 92
+  },
+  {
+    "id": 878,
+    "name": "Bari",
+    "slug": "bari",
+    "parent": 94
+  },
+  {
+    "id": 291,
+    "name": "Barranquilla",
+    "slug": "barranquilla",
+    "parent": 66
+  },
+  {
+    "id": 251,
+    "name": "Basel",
+    "slug": "basel",
+    "parent": 250
+  },
+  {
+    "id": 745,
+    "name": "Bastia",
+    "slug": "bastia",
+    "parent": 79
+  },
+  {
+    "id": 237,
+    "name": "Belgium",
+    "slug": "belgium",
+    "parent": 71
+  },
+  {
+    "id": 82,
+    "name": "Belgrade",
+    "slug": "belgrade",
+    "parent": 81
+  },
+  {
+    "id": 1229,
+    "name": "Bellinzona",
+    "slug": "bellinzona",
+    "parent": 250
+  },
+  {
+    "id": 292,
+    "name": "Belo Horizonte",
+    "slug": "belo-horizonte",
+    "parent": 63
+  },
+  {
+    "id": 1141,
+    "name": "Beltinci",
+    "slug": "beltinci",
+    "parent": 302
+  },
+  {
+    "id": 935,
+    "name": "Ben Guerir",
+    "slug": "ben-guerir",
+    "parent": 125
+  },
+  {
+    "id": 932,
+    "name": "Beni Mellal",
+    "slug": "beni-mellal",
+    "parent": 125
+  },
+  {
+    "id": 853,
+    "name": "Bergamo",
+    "slug": "bergamo",
+    "parent": 94
+  },
+  {
+    "id": 970,
+    "name": "Bergen",
+    "slug": "bergen",
+    "parent": 264
+  },
+  {
+    "id": 917,
+    "name": "Berkane",
+    "slug": "berkane",
+    "parent": 125
+  },
+  {
+    "id": 505,
+    "name": "Berlin",
+    "slug": "berlin",
+    "parent": 87
+  },
+  {
+    "id": 1213,
+    "name": "Bern",
+    "slug": "bern",
+    "parent": 250
+  },
+  {
+    "id": 925,
+    "name": "Berrechid",
+    "slug": "berrechid",
+    "parent": 125
+  },
+  {
+    "id": 1018,
+    "name": "Białystok",
+    "slug": "bialystok",
+    "parent": 85
+  },
+  {
+    "id": 1043,
+    "name": "Bielsko-Biała",
+    "slug": "bielsko-biala",
+    "parent": 85
+  },
+  {
+    "id": 671,
+    "name": "Bijelo Brdo",
+    "slug": "bijelo-brdo",
+    "parent": 128
+  },
+  {
+    "id": 134,
+    "name": "Bilbao",
+    "slug": "bilbao",
+    "parent": 76
+  },
+  {
+    "id": 1145,
+    "name": "Bilje",
+    "slug": "bilje",
+    "parent": 302
+  },
+  {
+    "id": 1261,
+    "name": "Birmingham",
+    "slug": "birmingham",
+    "parent": 115
+  },
+  {
+    "id": 1271,
+    "name": "Blackburn",
+    "slug": "blackburn",
+    "parent": 115
+  },
+  {
+    "id": 774,
+    "name": "Bochum",
+    "slug": "bochum",
+    "parent": 87
+  },
+  {
+    "id": 968,
+    "name": "Bodø",
+    "slug": "bodo",
+    "parent": 264
+  },
+  {
+    "id": 1249,
+    "name": "Bodrum",
+    "slug": "bodrum",
+    "parent": 89
+  },
+  {
+    "id": 117,
+    "name": "Bogotá",
+    "slug": "bogota",
+    "parent": 66
+  },
+  {
+    "id": 3334,
+    "name": "Bolivia",
+    "slug": "bolivia",
+    "parent": 0
+  },
+  {
+    "id": 3335,
+    "name": "Bolivia",
+    "slug": "bolivia-south-america",
+    "parent": 59
+  },
+  {
+    "id": 854,
+    "name": "Bologna",
+    "slug": "bologna",
+    "parent": 94
+  },
+  {
+    "id": 1254,
+    "name": "Bolu",
+    "slug": "bolu",
+    "parent": 89
+  },
+  {
+    "id": 876,
+    "name": "Bolzano",
+    "slug": "bolzano",
+    "parent": 94
+  },
+  {
+    "id": 1191,
+    "name": "Borås",
+    "slug": "boras",
+    "parent": 235
+  },
+  {
+    "id": 746,
+    "name": "Bordeaux",
+    "slug": "bordeaux",
+    "parent": 79
+  },
+  {
+    "id": 1208,
+    "name": "Borlänge",
+    "slug": "borlange",
+    "parent": 235
+  },
+  {
+    "id": 1535,
+    "name": "Bosnia and Herzegovina",
+    "slug": "bosnia-and-herzegovina",
+    "parent": 71
+  },
+  {
+    "id": 1438,
+    "name": "Boston",
+    "slug": "boston",
+    "parent": 141
+  },
+  {
+    "id": 1264,
+    "name": "Bournemouth",
+    "slug": "bournemouth",
+    "parent": 115
+  },
+  {
+    "id": 579,
+    "name": "Boussu",
+    "slug": "boussu",
+    "parent": 237
+  },
+  {
+    "id": 1048,
+    "name": "Braga",
+    "slug": "braga",
+    "parent": 92
+  },
+  {
+    "id": 593,
+    "name": "Bragança Paulista",
+    "slug": "braganca-paulista",
+    "parent": 63
+  },
+  {
+    "id": 1093,
+    "name": "Brașov",
+    "slug": "brasov",
+    "parent": 132
+  },
+  {
+    "id": 788,
+    "name": "Braunschweig",
+    "slug": "braunschweig",
+    "parent": 87
+  },
+  {
+    "id": 846,
+    "name": "Bray",
+    "slug": "bray",
+    "parent": 294
+  },
+  {
+    "id": 63,
+    "name": "Brazil",
+    "slug": "brazil",
+    "parent": 59
+  },
+  {
+    "id": 956,
+    "name": "Breda",
+    "slug": "breda",
+    "parent": 130
+  },
+  {
+    "id": 768,
+    "name": "Bremen",
+    "slug": "bremen",
+    "parent": 87
+  },
+  {
+    "id": 871,
+    "name": "Brescia",
+    "slug": "brescia",
+    "parent": 94
+  },
+  {
+    "id": 728,
+    "name": "Brest",
+    "slug": "brest",
+    "parent": 79
+  },
+  {
+    "id": 1263,
+    "name": "Brighton",
+    "slug": "brighton",
+    "parent": 115
+  },
+  {
+    "id": 1272,
+    "name": "Bristol",
+    "slug": "bristol",
+    "parent": 115
+  },
+  {
+    "id": 691,
+    "name": "Brno",
+    "slug": "brno",
+    "parent": 72
+  },
+  {
+    "id": 1439,
+    "name": "Brooklyn",
+    "slug": "brooklyn",
+    "parent": 141
+  },
+  {
+    "id": 248,
+    "name": "Bruges",
+    "slug": "bruges",
+    "parent": 237
+  },
+  {
+    "id": 238,
+    "name": "Brussels",
+    "slug": "brussels",
+    "parent": 237
+  },
+  {
+    "id": 986,
+    "name": "Bryne",
+    "slug": "bryne",
+    "parent": 264
+  },
+  {
+    "id": 639,
+    "name": "Bucaramanga",
+    "slug": "bucaramanga",
+    "parent": 66
+  },
+  {
+    "id": 133,
+    "name": "Bucharest",
+    "slug": "bucharest",
+    "parent": 132
+  },
+  {
+    "id": 119,
+    "name": "Budapest",
+    "slug": "budapest",
+    "parent": 118
+  },
+  {
+    "id": 61,
+    "name": "Buenos Aires",
+    "slug": "buenos-aires",
+    "parent": 60
+  },
+  {
+    "id": 1455,
+    "name": "Buffalo",
+    "slug": "buffalo",
+    "parent": 141
+  },
+  {
+    "id": 1172,
+    "name": "Burgos",
+    "slug": "burgos",
+    "parent": 76
+  },
+  {
+    "id": 1273,
+    "name": "Burnley",
+    "slug": "burnley",
+    "parent": 115
+  },
+  {
+    "id": 1088,
+    "name": "Buzău",
+    "slug": "buzau",
+    "parent": 132
+  },
+  {
+    "id": 1162,
+    "name": "Cádiz",
+    "slug": "cadiz",
+    "parent": 76
+  },
+  {
+    "id": 747,
+    "name": "Caen",
+    "slug": "caen",
+    "parent": 79
+  },
+  {
+    "id": 860,
+    "name": "Cagliari",
+    "slug": "cagliari",
+    "parent": 94
+  },
+  {
+    "id": 124,
+    "name": "Cairo",
+    "slug": "cairo",
+    "parent": 123
+  },
+  {
+    "id": 1001,
+    "name": "Cajamarca",
+    "slug": "cajamarca",
+    "parent": 137
+  },
+  {
+    "id": 610,
+    "name": "Calama",
+    "slug": "calama",
+    "parent": 139
+  },
+  {
+    "id": 1484,
+    "name": "Calgary",
+    "slug": "calgary",
+    "parent": 1305
+  },
+  {
+    "id": 638,
+    "name": "Cali",
+    "slug": "cali",
+    "parent": 66
+  },
+  {
+    "id": 999,
+    "name": "Callao",
+    "slug": "callao",
+    "parent": 137
+  },
+  {
+    "id": 560,
+    "name": "Campana",
+    "slug": "campana",
+    "parent": 60
+  },
+  {
+    "id": 597,
+    "name": "Campinas",
+    "slug": "campinas",
+    "parent": 63
+  },
+  {
+    "id": 1305,
+    "name": "Canada",
+    "slug": "canada",
+    "parent": 68
+  },
+  {
+    "id": 912,
+    "name": "Cancún",
+    "slug": "cancun",
+    "parent": 69
+  },
+  {
+    "id": 1274,
+    "name": "Cardiff",
+    "slug": "cardiff",
+    "parent": 115
+  },
+  {
+    "id": 548,
+    "name": "Carlos Casares",
+    "slug": "carlos-casares",
+    "parent": 60
+  },
+  {
+    "id": 1235,
+    "name": "Carouge",
+    "slug": "carouge",
+    "parent": 250
+  },
+  {
+    "id": 884,
+    "name": "Carrara",
+    "slug": "carrara",
+    "parent": 94
+  },
+  {
+    "id": 1302,
+    "name": "Carson",
+    "slug": "carson",
+    "parent": 141
+  },
+  {
+    "id": 120,
+    "name": "Cartagena",
+    "slug": "cartagena",
+    "parent": 66
+  },
+  {
+    "id": 1175,
+    "name": "Cartagena",
+    "slug": "cartagena-spain",
+    "parent": 76
+  },
+  {
+    "id": 1339,
+    "name": "Cary",
+    "slug": "cary",
+    "parent": 141
+  },
+  {
+    "id": 126,
+    "name": "Casablanca",
+    "slug": "casablanca",
+    "parent": 125
+  },
+  {
+    "id": 554,
+    "name": "Caseros",
+    "slug": "caseros",
+    "parent": 60
+  },
+  {
+    "id": 883,
+    "name": "Castellammare di Stabia",
+    "slug": "castellammare-di-stabia",
+    "parent": 94
+  },
+  {
+    "id": 1186,
+    "name": "Castellón de la Plana",
+    "slug": "castellon-de-la-plana",
+    "parent": 76
+  },
+  {
+    "id": 2858,
+    "name": "Catania",
+    "slug": "catania",
+    "parent": 94
+  },
+  {
+    "id": 869,
+    "name": "Catanzaro",
+    "slug": "catanzaro",
+    "parent": 94
+  },
+  {
+    "id": 592,
+    "name": "Caxias do Sul",
+    "slug": "caxias-do-sul",
+    "parent": 63
+  },
+  {
+    "id": 902,
+    "name": "Celaya",
+    "slug": "celaya",
+    "parent": 69
+  },
+  {
+    "id": 1128,
+    "name": "Celje",
+    "slug": "celje",
+    "parent": 302
+  },
+  {
+    "id": 2537,
+    "name": "Central America",
+    "slug": "central-america",
+    "parent": 0
+  },
+  {
+    "id": 885,
+    "name": "Cesena",
+    "slug": "cesena",
+    "parent": 94
+  },
+  {
+    "id": 690,
+    "name": "České Budějovice",
+    "slug": "ceske-budejovice",
+    "parent": 72
+  },
+  {
+    "id": 806,
+    "name": "Chania",
+    "slug": "chania",
+    "parent": 83
+  },
+  {
+    "id": 603,
+    "name": "Chapecó",
+    "slug": "chapeco",
+    "parent": 63
+  },
+  {
+    "id": 566,
+    "name": "Charleroi",
+    "slug": "charleroi",
+    "parent": 237
+  },
+  {
+    "id": 1322,
+    "name": "Charleston",
+    "slug": "charleston",
+    "parent": 141
+  },
+  {
+    "id": 1294,
+    "name": "Charlotte",
+    "slug": "charlotte",
+    "parent": 141
+  },
+  {
+    "id": 1670,
+    "name": "Chattanooga",
+    "slug": "chattanooga",
+    "parent": 1669
+  },
+  {
+    "id": 1312,
+    "name": "Chester",
+    "slug": "chester",
+    "parent": 141
+  },
+  {
+    "id": 1092,
+    "name": "Chiajna",
+    "slug": "chiajna",
+    "parent": 132
+  },
+  {
+    "id": 881,
+    "name": "Chiavari",
+    "slug": "chiavari",
+    "parent": 94
+  },
+  {
+    "id": 143,
+    "name": "Chicago",
+    "slug": "chicago",
+    "parent": 141
+  },
+  {
+    "id": 1008,
+    "name": "Chiclayo",
+    "slug": "chiclayo",
+    "parent": 137
+  },
+  {
+    "id": 139,
+    "name": "Chile",
+    "slug": "chile",
+    "parent": 59
+  },
+  {
+    "id": 617,
+    "name": "Chillán",
+    "slug": "chillan",
+    "parent": 139
+  },
+  {
+    "id": 1029,
+    "name": "Chorzów",
+    "slug": "chorzow",
+    "parent": 85
+  },
+  {
+    "id": 698,
+    "name": "Chrudim",
+    "slug": "chrudim",
+    "parent": 72
+  },
+  {
+    "id": 1295,
+    "name": "Cincinnati",
+    "slug": "cincinnati",
+    "parent": 141
+  },
+  {
+    "id": 875,
+    "name": "Cittadella",
+    "slug": "cittadella",
+    "parent": 94
+  },
+  {
+    "id": 896,
+    "name": "Ciudad Juárez",
+    "slug": "ciudad-juarez",
+    "parent": 69
+  },
+  {
+    "id": 908,
+    "name": "Ciudad Victoria",
+    "slug": "ciudad-victoria",
+    "parent": 69
+  },
+  {
+    "id": 1440,
+    "name": "Cleveland",
+    "slug": "cleveland",
+    "parent": 141
+  },
+  {
+    "id": 1077,
+    "name": "Cluj-Napoca",
+    "slug": "cluj-napoca",
+    "parent": 132
+  },
+  {
+    "id": 847,
+    "name": "Cobh",
+    "slug": "cobh",
+    "parent": 294
+  },
+  {
+    "id": 776,
+    "name": "Cologne",
+    "slug": "cologne",
+    "parent": 87
+  },
+  {
+    "id": 66,
+    "name": "Colombia",
+    "slug": "colombia",
+    "parent": 59
+  },
+  {
+    "id": 1297,
+    "name": "Columbus",
+    "slug": "columbus",
+    "parent": 141
+  },
+  {
+    "id": 1296,
+    "name": "Commerce City",
+    "slug": "commerce-city",
+    "parent": 141
+  },
+  {
+    "id": 864,
+    "name": "Como",
+    "slug": "como",
+    "parent": 94
+  },
+  {
+    "id": 1482,
+    "name": "Comodoro Rivadavia",
+    "slug": "comodoro-rivadavia",
+    "parent": 60
+  },
+  {
+    "id": 748,
+    "name": "Concarneau",
+    "slug": "concarneau",
+    "parent": 79
+  },
+  {
+    "id": 633,
+    "name": "Concepción",
+    "slug": "concepcion",
+    "parent": 139
+  },
+  {
+    "id": 1079,
+    "name": "Constanța",
+    "slug": "constanta",
+    "parent": 132
+  },
+  {
+    "id": 613,
+    "name": "Copiapó",
+    "slug": "copiapo",
+    "parent": 139
+  },
+  {
+    "id": 612,
+    "name": "Coquimbo",
+    "slug": "coquimbo",
+    "parent": 139
+  },
+  {
+    "id": 1651,
+    "name": "Córdoba",
+    "slug": "cordoba-spain",
+    "parent": 76
+  },
+  {
+    "id": 525,
+    "name": "Córdoba",
+    "slug": "cordoba",
+    "parent": 60
+  },
+  {
+    "id": 841,
+    "name": "Cork",
+    "slug": "cork",
+    "parent": 294
+  },
+  {
+    "id": 1166,
+    "name": "Cornellà de Llobregat",
+    "slug": "cornella-de-llobregat",
+    "parent": 76
+  },
+  {
+    "id": 1480,
+    "name": "Corrientes",
+    "slug": "corrientes",
+    "parent": 60
+  },
+  {
+    "id": 872,
+    "name": "Cosenza",
+    "slug": "cosenza",
+    "parent": 94
+  },
+  {
+    "id": 2538,
+    "name": "Costa Rica",
+    "slug": "costa-rica",
+    "parent": 2537
+  },
+  {
+    "id": 653,
+    "name": "Cota",
+    "slug": "cota",
+    "parent": 66
+  },
+  {
+    "id": 1275,
+    "name": "Coventry",
+    "slug": "coventry",
+    "parent": 115
+  },
+  {
+    "id": 1072,
+    "name": "Covilhã",
+    "slug": "covilha",
+    "parent": 92
+  },
+  {
+    "id": 1078,
+    "name": "Craiova",
+    "slug": "craiova",
+    "parent": 132
+  },
+  {
+    "id": 865,
+    "name": "Cremona",
+    "slug": "cremona",
+    "parent": 94
+  },
+  {
+    "id": 601,
+    "name": "Criciúma",
+    "slug": "criciuma",
+    "parent": 63
+  },
+  {
+    "id": 128,
+    "name": "Croatia",
+    "slug": "croatia",
+    "parent": 71
+  },
+  {
+    "id": 286,
+    "name": "Crotone",
+    "slug": "crotone",
+    "parent": 94
+  },
+  {
+    "id": 831,
+    "name": "Csákvár",
+    "slug": "csakvar",
+    "parent": 118
+  },
+  {
+    "id": 652,
+    "name": "Cúcuta",
+    "slug": "cucuta",
+    "parent": 66
+  },
+  {
+    "id": 703,
+    "name": "Cuenca",
+    "slug": "cuenca",
+    "parent": 279
+  },
+  {
+    "id": 590,
+    "name": "Cuiabá",
+    "slug": "cuiaba",
+    "parent": 63
+  },
+  {
+    "id": 910,
+    "name": "Culiacán",
+    "slug": "culiacan",
+    "parent": 69
+  },
+  {
+    "id": 620,
+    "name": "Curicó",
+    "slug": "curico",
+    "parent": 139
+  },
+  {
+    "id": 586,
+    "name": "Curitiba",
+    "slug": "curitiba",
+    "parent": 63
+  },
+  {
+    "id": 998,
+    "name": "Cusco",
+    "slug": "cusco",
+    "parent": 137
+  },
+  {
+    "id": 72,
+    "name": "Czech Republic",
+    "slug": "czech-republic",
+    "parent": 71
+  },
+  {
+    "id": 1022,
+    "name": "Częstochowa",
+    "slug": "czestochowa",
+    "parent": 85
+  },
+  {
+    "id": 1441,
+    "name": "Dallas",
+    "slug": "dallas",
+    "parent": 141
+  },
+  {
+    "id": 778,
+    "name": "Darmstadt",
+    "slug": "darmstadt",
+    "parent": 87
+  },
+  {
+    "id": 936,
+    "name": "Dcheira El Jihadia",
+    "slug": "dcheira-el-jihadia",
+    "parent": 125
+  },
+  {
+    "id": 816,
+    "name": "Debrecen",
+    "slug": "debrecen",
+    "parent": 118
+  },
+  {
+    "id": 1200,
+    "name": "Degerfors",
+    "slug": "degerfors",
+    "parent": 235
+  },
+  {
+    "id": 576,
+    "name": "Deinze",
+    "slug": "deinze",
+    "parent": 237
+  },
+  {
+    "id": 1096,
+    "name": "Dej",
+    "slug": "dej",
+    "parent": 132
+  },
+  {
+    "id": 1149,
+    "name": "Dekani",
+    "slug": "dekani",
+    "parent": 302
+  },
+  {
+    "id": 720,
+    "name": "Dekernes",
+    "slug": "dekernes",
+    "parent": 123
+  },
+  {
+    "id": 567,
+    "name": "Denderleeuw",
+    "slug": "denderleeuw",
+    "parent": 237
+  },
+  {
+    "id": 1442,
+    "name": "Denver",
+    "slug": "denver",
+    "parent": 141
+  },
+  {
+    "id": 1276,
+    "name": "Derby",
+    "slug": "derby",
+    "parent": 115
+  },
+  {
+    "id": 838,
+    "name": "Derry",
+    "slug": "derry",
+    "parent": 294
+  },
+  {
+    "id": 1327,
+    "name": "Detroit",
+    "slug": "detroit",
+    "parent": 141
+  },
+  {
+    "id": 945,
+    "name": "Deventer",
+    "slug": "deventer",
+    "parent": 130
+  },
+  {
+    "id": 1258,
+    "name": "Diyarbakır",
+    "slug": "diyarbakir",
+    "parent": 89
+  },
+  {
+    "id": 553,
+    "name": "Dock Sud",
+    "slug": "dock-sud",
+    "parent": 60
+  },
+  {
+    "id": 957,
+    "name": "Doetinchem",
+    "slug": "doetinchem",
+    "parent": 130
+  },
+  {
+    "id": 2454,
+    "name": "Doha",
+    "slug": "doha",
+    "parent": 2453
+  },
+  {
+    "id": 1133,
+    "name": "Domžale",
+    "slug": "domzale",
+    "parent": 302
+  },
+  {
+    "id": 964,
+    "name": "Dordrecht",
+    "slug": "dordrecht",
+    "parent": 130
+  },
+  {
+    "id": 832,
+    "name": "Dorog",
+    "slug": "dorog",
+    "parent": 118
+  },
+  {
+    "id": 88,
+    "name": "Dortmund",
+    "slug": "dortmund",
+    "parent": 87
+  },
+  {
+    "id": 975,
+    "name": "Drammen",
+    "slug": "drammen",
+    "parent": 264
+  },
+  {
+    "id": 840,
+    "name": "Drogheda",
+    "slug": "drogheda",
+    "parent": 294
+  },
+  {
+    "id": 1470,
+    "name": "Dubai",
+    "slug": "dubai",
+    "parent": 1469
+  },
+  {
+    "id": 295,
+    "name": "Dublin",
+    "slug": "dublin",
+    "parent": 294
+  },
+  {
+    "id": 670,
+    "name": "Dugopolje",
+    "slug": "dugopolje",
+    "parent": 128
+  },
+  {
+    "id": 1102,
+    "name": "Dumbrăvița",
+    "slug": "dumbravita",
+    "parent": 132
+  },
+  {
+    "id": 837,
+    "name": "Dundalk",
+    "slug": "dundalk",
+    "parent": 294
+  },
+  {
+    "id": 749,
+    "name": "Dunkerque",
+    "slug": "dunkerque",
+    "parent": 79
+  },
+  {
+    "id": 297,
+    "name": "Dusseldorf",
+    "slug": "dusseldorf",
+    "parent": 87
+  },
+  {
+    "id": 1495,
+    "name": "Düsseldorf/Duisburg",
+    "slug": "dusseldorf-duisburg",
+    "parent": 87
+  },
+  {
+    "id": 1460,
+    "name": "East Rutherford",
+    "slug": "east-rutherford",
+    "parent": 141
+  },
+  {
+    "id": 279,
+    "name": "Ecuador",
+    "slug": "ecuador",
+    "parent": 59
+  },
+  {
+    "id": 1331,
+    "name": "Edinburg",
+    "slug": "edinburg",
+    "parent": 141
+  },
+  {
+    "id": 1486,
+    "name": "Edmonton",
+    "slug": "edmonton",
+    "parent": 1305
+  },
+  {
+    "id": 994,
+    "name": "Egersund",
+    "slug": "egersund",
+    "parent": 264
+  },
+  {
+    "id": 123,
+    "name": "Egypt",
+    "slug": "egypt",
+    "parent": 122
+  },
+  {
+    "id": 1167,
+    "name": "Eibar",
+    "slug": "eibar",
+    "parent": 76
+  },
+  {
+    "id": 939,
+    "name": "Eindhoven",
+    "slug": "eindhoven",
+    "parent": 130
+  },
+  {
+    "id": 717,
+    "name": "El Gouna",
+    "slug": "el-gouna",
+    "parent": 123
+  },
+  {
+    "id": 929,
+    "name": "El Jadida",
+    "slug": "el-jadida",
+    "parent": 125
+  },
+  {
+    "id": 718,
+    "name": "El Mahalla El Kubra",
+    "slug": "el-mahalla-el-kubra",
+    "parent": 123
+  },
+  {
+    "id": 1330,
+    "name": "El Paso",
+    "slug": "el-paso",
+    "parent": 141
+  },
+  {
+    "id": 611,
+    "name": "El Salvador",
+    "slug": "el-salvador",
+    "parent": 139
+  },
+  {
+    "id": 1173,
+    "name": "Elche",
+    "slug": "elche",
+    "parent": 76
+  },
+  {
+    "id": 1176,
+    "name": "Elda",
+    "slug": "elda",
+    "parent": 76
+  },
+  {
+    "id": 1490,
+    "name": "Elmont",
+    "slug": "elmont",
+    "parent": 141
+  },
+  {
+    "id": 958,
+    "name": "Emmen",
+    "slug": "emmen",
+    "parent": 130
+  },
+  {
+    "id": 861,
+    "name": "Empoli",
+    "slug": "empoli",
+    "parent": 94
+  },
+  {
+    "id": 941,
+    "name": "Enschede",
+    "slug": "enschede",
+    "parent": 130
+  },
+  {
+    "id": 643,
+    "name": "Envigado",
+    "slug": "envigado",
+    "parent": 66
+  },
+  {
+    "id": 1255,
+    "name": "Erzurum",
+    "slug": "erzurum",
+    "parent": 89
+  },
+  {
+    "id": 712,
+    "name": "Esmeraldas",
+    "slug": "esmeraldas",
+    "parent": 279
+  },
+  {
+    "id": 1056,
+    "name": "Estoril",
+    "slug": "estoril",
+    "parent": 92
+  },
+  {
+    "id": 578,
+    "name": "Eupen",
+    "slug": "eupen",
+    "parent": 237
+  },
+  {
+    "id": 71,
+    "name": "Europe",
+    "slug": "europe",
+    "parent": 0
+  },
+  {
+    "id": 1052,
+    "name": "Famalicão",
+    "slug": "famalicao",
+    "parent": 92
+  },
+  {
+    "id": 1053,
+    "name": "Faro",
+    "slug": "faro",
+    "parent": 92
+  },
+  {
+    "id": 815,
+    "name": "Felcsút",
+    "slug": "felcsut",
+    "parent": 118
+  },
+  {
+    "id": 1183,
+    "name": "Ferrol",
+    "slug": "ferrol",
+    "parent": 76
+  },
+  {
+    "id": 919,
+    "name": "Fez",
+    "slug": "fez",
+    "parent": 125
+  },
+  {
+    "id": 855,
+    "name": "Florence",
+    "slug": "florence",
+    "parent": 94
+  },
+  {
+    "id": 527,
+    "name": "Florencio Varela",
+    "slug": "florencio-varela",
+    "parent": 60
+  },
+  {
+    "id": 596,
+    "name": "Florianópolis",
+    "slug": "florianopolis",
+    "parent": 63
+  },
+  {
+    "id": 1479,
+    "name": "Formosa",
+    "slug": "formosa",
+    "parent": 60
+  },
+  {
+    "id": 1303,
+    "name": "Fort Lauderdale",
+    "slug": "fort-lauderdale",
+    "parent": 141
+  },
+  {
+    "id": 589,
+    "name": "Fortaleza",
+    "slug": "fortaleza",
+    "parent": 63
+  },
+  {
+    "id": 1308,
+    "name": "Foxborough",
+    "slug": "foxborough",
+    "parent": 141
+  },
+  {
+    "id": 79,
+    "name": "France",
+    "slug": "france",
+    "parent": 71
+  },
+  {
+    "id": 765,
+    "name": "Frankfurt",
+    "slug": "frankfurt",
+    "parent": 87
+  },
+  {
+    "id": 2265,
+    "name": "Frankfurt am Main",
+    "slug": "frankfurt-am-main",
+    "parent": 87
+  },
+  {
+    "id": 981,
+    "name": "Fredrikstad",
+    "slug": "fredrikstad",
+    "parent": 264
+  },
+  {
+    "id": 769,
+    "name": "Freiburg im Breisgau",
+    "slug": "freiburg-im-breisgau",
+    "parent": 87
+  },
+  {
+    "id": 1298,
+    "name": "Frisco",
+    "slug": "frisco",
+    "parent": 141
+  },
+  {
+    "id": 862,
+    "name": "Frosinone",
+    "slug": "frosinone",
+    "parent": 94
+  },
+  {
+    "id": 1060,
+    "name": "Funchal",
+    "slug": "funchal",
+    "parent": 92
+  },
+  {
+    "id": 782,
+    "name": "Fürth",
+    "slug": "furth",
+    "parent": 87
+  },
+  {
+    "id": 1084,
+    "name": "Galați",
+    "slug": "galati",
+    "parent": 132
+  },
+  {
+    "id": 842,
+    "name": "Galway",
+    "slug": "galway",
+    "parent": 294
+  },
+  {
+    "id": 1206,
+    "name": "Gävle",
+    "slug": "gavle",
+    "parent": 235
+  },
+  {
+    "id": 809,
+    "name": "Gazi",
+    "slug": "gazi",
+    "parent": 83
+  },
+  {
+    "id": 1243,
+    "name": "Gaziantep",
+    "slug": "gaziantep",
+    "parent": 89
+  },
+  {
+    "id": 1030,
+    "name": "Gdańsk",
+    "slug": "gdansk",
+    "parent": 85
+  },
+  {
+    "id": 1032,
+    "name": "Gdynia",
+    "slug": "gdynia",
+    "parent": 85
+  },
+  {
+    "id": 783,
+    "name": "Gelsenkirchen",
+    "slug": "gelsenkirchen",
+    "parent": 87
+  },
+  {
+    "id": 1215,
+    "name": "Geneva",
+    "slug": "geneva",
+    "parent": 250
+  },
+  {
+    "id": 569,
+    "name": "Genk",
+    "slug": "genk",
+    "parent": 237
+  },
+  {
+    "id": 255,
+    "name": "Genoa",
+    "slug": "genoa",
+    "parent": 94
+  },
+  {
+    "id": 87,
+    "name": "Germany",
+    "slug": "germany",
+    "parent": 71
+  },
+  {
+    "id": 1157,
+    "name": "Getafe",
+    "slug": "getafe",
+    "parent": 76
+  },
+  {
+    "id": 568,
+    "name": "Ghent",
+    "slug": "ghent",
+    "parent": 237
+  },
+  {
+    "id": 1169,
+    "name": "Gijón",
+    "slug": "gijon",
+    "parent": 76
+  },
+  {
+    "id": 1152,
+    "name": "Girona",
+    "slug": "girona",
+    "parent": 76
+  },
+  {
+    "id": 719,
+    "name": "Giza",
+    "slug": "giza",
+    "parent": 123
+  },
+  {
+    "id": 75,
+    "name": "Glasgow",
+    "slug": "glasgow",
+    "parent": 115
+  },
+  {
+    "id": 1453,
+    "name": "Glendale",
+    "slug": "glendale",
+    "parent": 141
+  },
+  {
+    "id": 1025,
+    "name": "Gliwice",
+    "slug": "gliwice",
+    "parent": 85
+  },
+  {
+    "id": 1039,
+    "name": "Głogów",
+    "slug": "glogow",
+    "parent": 85
+  },
+  {
+    "id": 529,
+    "name": "Godoy Cruz",
+    "slug": "godoy-cruz",
+    "parent": 60
+  },
+  {
+    "id": 598,
+    "name": "Goiânia",
+    "slug": "goiania",
+    "parent": 63
+  },
+  {
+    "id": 1127,
+    "name": "Golubovci",
+    "slug": "golubovci",
+    "parent": 81
+  },
+  {
+    "id": 1120,
+    "name": "Gornji Milanovac",
+    "slug": "gornji-milanovac",
+    "parent": 81
+  },
+  {
+    "id": 1192,
+    "name": "Gothenburg",
+    "slug": "gothenburg",
+    "parent": 235
+  },
+  {
+    "id": 1163,
+    "name": "Granada",
+    "slug": "granada",
+    "parent": 76
+  },
+  {
+    "id": 1643,
+    "name": "Graz",
+    "slug": "graz",
+    "parent": 1427
+  },
+  {
+    "id": 83,
+    "name": "Greece",
+    "slug": "greece",
+    "parent": 71
+  },
+  {
+    "id": 1457,
+    "name": "Green Bay",
+    "slug": "green-bay",
+    "parent": 141
+  },
+  {
+    "id": 556,
+    "name": "Gregorio de Laferrere",
+    "slug": "gregorio-de-laferrere",
+    "parent": 60
+  },
+  {
+    "id": 750,
+    "name": "Grenoble",
+    "slug": "grenoble",
+    "parent": 79
+  },
+  {
+    "id": 952,
+    "name": "Groningen",
+    "slug": "groningen",
+    "parent": 130
+  },
+  {
+    "id": 1151,
+    "name": "Grosuplje",
+    "slug": "grosuplje",
+    "parent": 302
+  },
+  {
+    "id": 136,
+    "name": "Guadalajara",
+    "slug": "guadalajara",
+    "parent": 69
+  },
+  {
+    "id": 710,
+    "name": "Gualaceo",
+    "slug": "gualaceo",
+    "parent": 279
+  },
+  {
+    "id": 701,
+    "name": "Guayaquil",
+    "slug": "guayaquil",
+    "parent": 279
+  },
+  {
+    "id": 1049,
+    "name": "Guimarães",
+    "slug": "guimaraes",
+    "parent": 92
+  },
+  {
+    "id": 751,
+    "name": "Guingamp",
+    "slug": "guingamp",
+    "parent": 79
+  },
+  {
+    "id": 823,
+    "name": "Győr",
+    "slug": "gyor",
+    "parent": 118
+  },
+  {
+    "id": 1198,
+    "name": "Hällevik",
+    "slug": "hallevik",
+    "parent": 235
+  },
+  {
+    "id": 1196,
+    "name": "Halmstad",
+    "slug": "halmstad",
+    "parent": 235
+  },
+  {
+    "id": 977,
+    "name": "Hamar",
+    "slug": "hamar",
+    "parent": 264
+  },
+  {
+    "id": 91,
+    "name": "Hamburg",
+    "slug": "hamburg",
+    "parent": 87
+  },
+  {
+    "id": 780,
+    "name": "Hanover",
+    "slug": "hanover",
+    "parent": 87
+  },
+  {
+    "id": 1310,
+    "name": "Harrison",
+    "slug": "harrison",
+    "parent": 141
+  },
+  {
+    "id": 1335,
+    "name": "Hartford",
+    "slug": "hartford",
+    "parent": 141
+  },
+  {
+    "id": 947,
+    "name": "Heerenveen",
+    "slug": "heerenveen",
+    "parent": 130
+  },
+  {
+    "id": 767,
+    "name": "Heidenheim an der Brenz",
+    "slug": "heidenheim-an-der-brenz",
+    "parent": 87
+  },
+  {
+    "id": 962,
+    "name": "Helmond",
+    "slug": "helmond",
+    "parent": 130
+  },
+  {
+    "id": 1207,
+    "name": "Helsingborg",
+    "slug": "helsingborg",
+    "parent": 235
+  },
+  {
+    "id": 796,
+    "name": "Heraklion",
+    "slug": "heraklion",
+    "parent": 83
+  },
+  {
+    "id": 909,
+    "name": "Hermosillo",
+    "slug": "hermosillo",
+    "parent": 69
+  },
+  {
+    "id": 1300,
+    "name": "Houston",
+    "slug": "houston",
+    "parent": 141
+  },
+  {
+    "id": 684,
+    "name": "Hradec Králové",
+    "slug": "hradec-kralove",
+    "parent": 72
+  },
+  {
+    "id": 677,
+    "name": "Hrvace",
+    "slug": "hrvace",
+    "parent": 128
+  },
+  {
+    "id": 1007,
+    "name": "Huancayo",
+    "slug": "huancayo",
+    "parent": 137
+  },
+  {
+    "id": 1015,
+    "name": "Huaral",
+    "slug": "huaral",
+    "parent": 137
+  },
+  {
+    "id": 1290,
+    "name": "Huddersfield",
+    "slug": "huddersfield",
+    "parent": 115
+  },
+  {
+    "id": 1177,
+    "name": "Huesca",
+    "slug": "huesca",
+    "parent": 76
+  },
+  {
+    "id": 1094,
+    "name": "Hunedoara",
+    "slug": "hunedoara",
+    "parent": 132
+  },
+  {
+    "id": 118,
+    "name": "Hungary",
+    "slug": "hungary",
+    "parent": 71
+  },
+  {
+    "id": 1085,
+    "name": "Iași",
+    "slug": "iasi",
+    "parent": 132
+  },
+  {
+    "id": 642,
+    "name": "Ibagué",
+    "slug": "ibague",
+    "parent": 66
+  },
+  {
+    "id": 704,
+    "name": "Ibarra",
+    "slug": "ibarra",
+    "parent": 279
+  },
+  {
+    "id": 807,
+    "name": "Ilioupoli",
+    "slug": "ilioupoli",
+    "parent": 83
+  },
+  {
+    "id": 1324,
+    "name": "Indianapolis",
+    "slug": "indianapolis",
+    "parent": 141
+  },
+  {
+    "id": 1117,
+    "name": "Inđija",
+    "slug": "indija",
+    "parent": 81
+  },
+  {
+    "id": 1497,
+    "name": "Innsbruck",
+    "slug": "innsbruck",
+    "parent": 1427
+  },
+  {
+    "id": 1268,
+    "name": "Ipswich",
+    "slug": "ipswich",
+    "parent": 115
+  },
+  {
+    "id": 614,
+    "name": "Iquique",
+    "slug": "iquique",
+    "parent": 139
+  },
+  {
+    "id": 1010,
+    "name": "Iquitos",
+    "slug": "iquitos",
+    "parent": 137
+  },
+  {
+    "id": 294,
+    "name": "Ireland",
+    "slug": "ireland",
+    "parent": 71
+  },
+  {
+    "id": 1328,
+    "name": "Irvine",
+    "slug": "irvine",
+    "parent": 141
+  },
+  {
+    "id": 716,
+    "name": "Ismailia",
+    "slug": "ismailia",
+    "parent": 123
+  },
+  {
+    "id": 90,
+    "name": "Istanbul",
+    "slug": "istanbul",
+    "parent": 89
+  },
+  {
+    "id": 654,
+    "name": "Itagüí",
+    "slug": "itagui",
+    "parent": 66
+  },
+  {
+    "id": 94,
+    "name": "Italy",
+    "slug": "italy",
+    "parent": 71
+  },
+  {
+    "id": 602,
+    "name": "Itu",
+    "slug": "itu",
+    "parent": 63
+  },
+  {
+    "id": 1112,
+    "name": "Ivanjica",
+    "slug": "ivanjica",
+    "parent": 81
+  },
+  {
+    "id": 1248,
+    "name": "İzmir",
+    "slug": "izmir",
+    "parent": 89
+  },
+  {
+    "id": 1250,
+    "name": "İzmit",
+    "slug": "izmit",
+    "parent": 89
+  },
+  {
+    "id": 686,
+    "name": "Jablonec nad Nisou",
+    "slug": "jablonec-nad-nisou",
+    "parent": 72
+  },
+  {
+    "id": 1458,
+    "name": "Jacksonville",
+    "slug": "jacksonville",
+    "parent": 141
+  },
+  {
+    "id": 1017,
+    "name": "Jaén",
+    "slug": "jaen",
+    "parent": 137
+  },
+  {
+    "id": 1672,
+    "name": "Japan",
+    "slug": "japan",
+    "parent": 1468
+  },
+  {
+    "id": 1046,
+    "name": "Jastrzębie-Zdrój",
+    "slug": "jastrzebie-zdroj",
+    "parent": 85
+  },
+  {
+    "id": 555,
+    "name": "Jauregui",
+    "slug": "jauregui",
+    "parent": 60
+  },
+  {
+    "id": 693,
+    "name": "Jihlava",
+    "slug": "jihlava",
+    "parent": 72
+  },
+  {
+    "id": 546,
+    "name": "José Ingenieros",
+    "slug": "jose-ingenieros",
+    "parent": 60
+  },
+  {
+    "id": 534,
+    "name": "Junín",
+    "slug": "junin",
+    "parent": 60
+  },
+  {
+    "id": 786,
+    "name": "Kaiserslautern",
+    "slug": "kaiserslautern",
+    "parent": 87
+  },
+  {
+    "id": 804,
+    "name": "Kalamata",
+    "slug": "kalamata",
+    "parent": 83
+  },
+  {
+    "id": 801,
+    "name": "Kallithea",
+    "slug": "kallithea",
+    "parent": 83
+  },
+  {
+    "id": 1194,
+    "name": "Kalmar",
+    "slug": "kalmar",
+    "parent": 235
+  },
+  {
+    "id": 1301,
+    "name": "Kansas City",
+    "slug": "kansas-city",
+    "parent": 141
+  },
+  {
+    "id": 811,
+    "name": "Karditsa",
+    "slug": "karditsa",
+    "parent": 83
+  },
+  {
+    "id": 779,
+    "name": "Karlsruhe",
+    "slug": "karlsruhe",
+    "parent": 87
+  },
+  {
+    "id": 689,
+    "name": "Karviná",
+    "slug": "karvina",
+    "parent": 72
+  },
+  {
+    "id": 1031,
+    "name": "Katowice",
+    "slug": "katowice",
+    "parent": 85
+  },
+  {
+    "id": 1475,
+    "name": "Kaunas",
+    "slug": "kaunas",
+    "parent": 1474
+  },
+  {
+    "id": 1241,
+    "name": "Kayseri",
+    "slug": "kayseri",
+    "parent": 89
+  },
+  {
+    "id": 825,
+    "name": "Kazincbarcika",
+    "slug": "kazincbarcika",
+    "parent": 118
+  },
+  {
+    "id": 820,
+    "name": "Kecskemét",
+    "slug": "kecskemet",
+    "parent": 118
+  },
+  {
+    "id": 959,
+    "name": "Kerkrade",
+    "slug": "kerkrade",
+    "parent": 130
+  },
+  {
+    "id": 933,
+    "name": "Khénifra",
+    "slug": "khenifra",
+    "parent": 125
+  },
+  {
+    "id": 931,
+    "name": "Khouribga",
+    "slug": "khouribga",
+    "parent": 125
+  },
+  {
+    "id": 1140,
+    "name": "Kidričevo",
+    "slug": "kidricevo",
+    "parent": 302
+  },
+  {
+    "id": 775,
+    "name": "Kiel",
+    "slug": "kiel",
+    "parent": 87
+  },
+  {
+    "id": 1027,
+    "name": "Kielce",
+    "slug": "kielce",
+    "parent": 85
+  },
+  {
+    "id": 798,
+    "name": "Kifisia",
+    "slug": "kifisia",
+    "parent": 83
+  },
+  {
+    "id": 1288,
+    "name": "Kingston upon Hull",
+    "slug": "kingston-upon-hull",
+    "parent": 115
+  },
+  {
+    "id": 819,
+    "name": "Kisvárda",
+    "slug": "kisvarda",
+    "parent": 118
+  },
+  {
+    "id": 989,
+    "name": "Kongsvinger",
+    "slug": "kongsvinger",
+    "parent": 264
+  },
+  {
+    "id": 1246,
+    "name": "Konya",
+    "slug": "konya",
+    "parent": 89
+  },
+  {
+    "id": 1132,
+    "name": "Koper",
+    "slug": "koper",
+    "parent": 302
+  },
+  {
+    "id": 664,
+    "name": "Koprivnica",
+    "slug": "koprivnica",
+    "parent": 128
+  },
+  {
+    "id": 585,
+    "name": "Kortrijk",
+    "slug": "kortrijk",
+    "parent": 237
+  },
+  {
+    "id": 810,
+    "name": "Kozani",
+    "slug": "kozani",
+    "parent": 83
+  },
+  {
+    "id": 835,
+    "name": "Kozármisleny",
+    "slug": "kozarmisleny",
+    "parent": 118
+  },
+  {
+    "id": 1107,
+    "name": "Kragujevac",
+    "slug": "kragujevac",
+    "parent": 81
+  },
+  {
+    "id": 86,
+    "name": "Kraków",
+    "slug": "krakow",
+    "parent": 85
+  },
+  {
+    "id": 1137,
+    "name": "Kranj",
+    "slug": "kranj",
+    "parent": 302
+  },
+  {
+    "id": 988,
+    "name": "Kristiansand",
+    "slug": "kristiansand",
+    "parent": 264
+  },
+  {
+    "id": 982,
+    "name": "Kristiansund",
+    "slug": "kristiansund",
+    "parent": 264
+  },
+  {
+    "id": 1147,
+    "name": "Krško",
+    "slug": "krsko",
+    "parent": 302
+  },
+  {
+    "id": 1108,
+    "name": "Kruševac",
+    "slug": "krusevac",
+    "parent": 81
+  },
+  {
+    "id": 1477,
+    "name": "La Banda",
+    "slug": "la-banda",
+    "parent": 60
+  },
+  {
+    "id": 619,
+    "name": "La Calera",
+    "slug": "la-calera",
+    "parent": 139
+  },
+  {
+    "id": 1011,
+    "name": "La Libertad",
+    "slug": "la-libertad",
+    "parent": 137
+  },
+  {
+    "id": 1345,
+    "name": "La Paz",
+    "slug": "la-paz",
+    "parent": 145
+  },
+  {
+    "id": 528,
+    "name": "La Plata",
+    "slug": "la-plata",
+    "parent": 60
+  },
+  {
+    "id": 1478,
+    "name": "La Rioja",
+    "slug": "la-rioja",
+    "parent": 60
+  },
+  {
+    "id": 623,
+    "name": "La Serena",
+    "slug": "la-serena",
+    "parent": 139
+  },
+  {
+    "id": 868,
+    "name": "La Spezia",
+    "slug": "la-spezia",
+    "parent": 94
+  },
+  {
+    "id": 1013,
+    "name": "Lambayeque",
+    "slug": "lambayeque",
+    "parent": 137
+  },
+  {
+    "id": 795,
+    "name": "Lamia",
+    "slug": "lamia",
+    "parent": 83
+  },
+  {
+    "id": 1463,
+    "name": "Landover",
+    "slug": "landover",
+    "parent": 141
+  },
+  {
+    "id": 1203,
+    "name": "Landskrona",
+    "slug": "landskrona",
+    "parent": 235
+  },
+  {
+    "id": 532,
+    "name": "Lanús",
+    "slug": "lanus",
+    "parent": 60
+  },
+  {
+    "id": 802,
+    "name": "Larissa",
+    "slug": "larissa",
+    "parent": 83
+  },
+  {
+    "id": 1161,
+    "name": "Las Palmas",
+    "slug": "las-palmas",
+    "parent": 76
+  },
+  {
+    "id": 1343,
+    "name": "Las Piedras",
+    "slug": "las-piedras",
+    "parent": 145
+  },
+  {
+    "id": 1459,
+    "name": "Las Vegas",
+    "slug": "las-vegas",
+    "parent": 141
+  },
+  {
+    "id": 1221,
+    "name": "Lausanne",
+    "slug": "lausanne",
+    "parent": 250
+  },
+  {
+    "id": 752,
+    "name": "Laval",
+    "slug": "laval",
+    "parent": 79
+  },
+  {
+    "id": 1121,
+    "name": "Lazarevac",
+    "slug": "lazarevac",
+    "parent": 81
+  },
+  {
+    "id": 738,
+    "name": "Le Havre",
+    "slug": "le-havre",
+    "parent": 79
+  },
+  {
+    "id": 754,
+    "name": "Le Petit-Quevilly",
+    "slug": "le-petit-quevilly",
+    "parent": 79
+  },
+  {
+    "id": 858,
+    "name": "Lecce",
+    "slug": "lecce",
+    "parent": 94
+  },
+  {
+    "id": 880,
+    "name": "Lecco",
+    "slug": "lecco",
+    "parent": 94
+  },
+  {
+    "id": 1045,
+    "name": "Łęczna",
+    "slug": "leczna",
+    "parent": 85
+  },
+  {
+    "id": 1270,
+    "name": "Leeds",
+    "slug": "leeds",
+    "parent": 115
+  },
+  {
+    "id": 1336,
+    "name": "Leesburg",
+    "slug": "leesburg",
+    "parent": 141
+  },
+  {
+    "id": 960,
+    "name": "Leeuwarden",
+    "slug": "leeuwarden",
+    "parent": 130
+  },
+  {
+    "id": 1165,
+    "name": "Leganés",
+    "slug": "leganes",
+    "parent": 76
+  },
+  {
+    "id": 1042,
+    "name": "Legnica",
+    "slug": "legnica",
+    "parent": 85
+  },
+  {
+    "id": 1267,
+    "name": "Leicester",
+    "slug": "leicester",
+    "parent": 115
+  },
+  {
+    "id": 764,
+    "name": "Leipzig",
+    "slug": "leipzig",
+    "parent": 87
+  },
+  {
+    "id": 1071,
+    "name": "Leiria",
+    "slug": "leiria",
+    "parent": 92
+  },
+  {
+    "id": 1144,
+    "name": "Lendava",
+    "slug": "lendava",
+    "parent": 302
+  },
+  {
+    "id": 731,
+    "name": "Lens",
+    "slug": "lens",
+    "parent": 79
+  },
+  {
+    "id": 891,
+    "name": "León",
+    "slug": "leon",
+    "parent": 69
+  },
+  {
+    "id": 1126,
+    "name": "Leskovac",
+    "slug": "leskovac",
+    "parent": 81
+  },
+  {
+    "id": 571,
+    "name": "Leuven",
+    "slug": "leuven",
+    "parent": 237
+  },
+  {
+    "id": 992,
+    "name": "Levanger",
+    "slug": "levanger",
+    "parent": 264
+  },
+  {
+    "id": 761,
+    "name": "Leverkusen",
+    "slug": "leverkusen",
+    "parent": 87
+  },
+  {
+    "id": 687,
+    "name": "Liberec",
+    "slug": "liberec",
+    "parent": 72
+  },
+  {
+    "id": 1233,
+    "name": "Liechtenstein",
+    "slug": "liechtenstein",
+    "parent": 71
+  },
+  {
+    "id": 272,
+    "name": "Liege",
+    "slug": "liege",
+    "parent": 237
+  },
+  {
+    "id": 580,
+    "name": "Lier",
+    "slug": "lier",
+    "parent": 237
+  },
+  {
+    "id": 729,
+    "name": "Lille",
+    "slug": "lille",
+    "parent": 79
+  },
+  {
+    "id": 973,
+    "name": "Lillestrøm",
+    "slug": "lillestrom",
+    "parent": 264
+  },
+  {
+    "id": 138,
+    "name": "Lima",
+    "slug": "lima",
+    "parent": 137
+  },
+  {
+    "id": 624,
+    "name": "Limache",
+    "slug": "limache",
+    "parent": 139
+  },
+  {
+    "id": 848,
+    "name": "Limerick",
+    "slug": "limerick",
+    "parent": 294
+  },
+  {
+    "id": 1642,
+    "name": "Linz",
+    "slug": "linz",
+    "parent": 1427
+  },
+  {
+    "id": 93,
+    "name": "Lisbon",
+    "slug": "lisbon",
+    "parent": 92
+  },
+  {
+    "id": 1474,
+    "name": "Lithuania",
+    "slug": "lithuania",
+    "parent": 71
+  },
+  {
+    "id": 800,
+    "name": "Livadeia",
+    "slug": "livadeia",
+    "parent": 83
+  },
+  {
+    "id": 284,
+    "name": "Liverpool",
+    "slug": "liverpool",
+    "parent": 115
+  },
+  {
+    "id": 303,
+    "name": "Ljubljana",
+    "slug": "ljubljana",
+    "parent": 302
+  },
+  {
+    "id": 630,
+    "name": "Lo Barnechea",
+    "slug": "lo-barnechea",
+    "parent": 139
+  },
+  {
+    "id": 1024,
+    "name": "Łódź",
+    "slug": "lodz",
+    "parent": 85
+  },
+  {
+    "id": 581,
+    "name": "Lokeren",
+    "slug": "lokeren",
+    "parent": 237
+  },
+  {
+    "id": 557,
+    "name": "Lomas de Zamora",
+    "slug": "lomas-de-zamora",
+    "parent": 60
+  },
+  {
+    "id": 582,
+    "name": "Lommel",
+    "slug": "lommel",
+    "parent": 237
+  },
+  {
+    "id": 116,
+    "name": "London",
+    "slug": "london",
+    "parent": 115
+  },
+  {
+    "id": 599,
+    "name": "Londrina",
+    "slug": "londrina",
+    "parent": 63
+  },
+  {
+    "id": 850,
+    "name": "Longford",
+    "slug": "longford",
+    "parent": 294
+  },
+  {
+    "id": 743,
+    "name": "Lorient",
+    "slug": "lorient",
+    "parent": 79
+  },
+  {
+    "id": 142,
+    "name": "Los Angeles",
+    "slug": "losangeles",
+    "parent": 141
+  },
+  {
+    "id": 1323,
+    "name": "Louisville",
+    "slug": "louisville",
+    "parent": 141
+  },
+  {
+    "id": 1023,
+    "name": "Lubin",
+    "slug": "lubin",
+    "parent": 85
+  },
+  {
+    "id": 1034,
+    "name": "Lublin",
+    "slug": "lublin",
+    "parent": 85
+  },
+  {
+    "id": 1109,
+    "name": "Lučani",
+    "slug": "lucani",
+    "parent": 81
+  },
+  {
+    "id": 1219,
+    "name": "Lucerne",
+    "slug": "lucerne",
+    "parent": 250
+  },
+  {
+    "id": 1216,
+    "name": "Lugano",
+    "slug": "lugano",
+    "parent": 250
+  },
+  {
+    "id": 1289,
+    "name": "Luton",
+    "slug": "luton",
+    "parent": 115
+  },
+  {
+    "id": 121,
+    "name": "Lyon",
+    "slug": "lyon",
+    "parent": 79
+  },
+  {
+    "id": 583,
+    "name": "Maasmechelen",
+    "slug": "maasmechelen",
+    "parent": 237
+  },
+  {
+    "id": 961,
+    "name": "Maastricht",
+    "slug": "maastricht",
+    "parent": 130
+  },
+  {
+    "id": 604,
+    "name": "Maceió",
+    "slug": "maceio",
+    "parent": 63
+  },
+  {
+    "id": 707,
+    "name": "Machala",
+    "slug": "machala",
+    "parent": 279
+  },
+  {
+    "id": 77,
+    "name": "Madrid",
+    "slug": "madrid",
+    "parent": 76
+  },
+  {
+    "id": 1065,
+    "name": "Mafra",
+    "slug": "mafra",
+    "parent": 92
+  },
+  {
+    "id": 787,
+    "name": "Magdeburg",
+    "slug": "magdeburg",
+    "parent": 87
+  },
+  {
+    "id": 772,
+    "name": "Mainz",
+    "slug": "mainz",
+    "parent": 87
+  },
+  {
+    "id": 551,
+    "name": "Maipú",
+    "slug": "maipu",
+    "parent": 60
+  },
+  {
+    "id": 1187,
+    "name": "Málaga",
+    "slug": "malaga",
+    "parent": 76
+  },
+  {
+    "id": 1342,
+    "name": "Maldonado",
+    "slug": "maldonado",
+    "parent": 145
+  },
+  {
+    "id": 1189,
+    "name": "Malmö",
+    "slug": "malmo",
+    "parent": 235
+  },
+  {
+    "id": 1260,
+    "name": "Manchester",
+    "slug": "manchester",
+    "parent": 115
+  },
+  {
+    "id": 1257,
+    "name": "Manisa",
+    "slug": "manisa",
+    "parent": 89
+  },
+  {
+    "id": 645,
+    "name": "Manizales",
+    "slug": "manizales",
+    "parent": 66
+  },
+  {
+    "id": 702,
+    "name": "Manta",
+    "slug": "manta",
+    "parent": 279
+  },
+  {
+    "id": 886,
+    "name": "Mantua",
+    "slug": "mantua",
+    "parent": 94
+  },
+  {
+    "id": 549,
+    "name": "Mar del Plata",
+    "slug": "mar-del-plata",
+    "parent": 60
+  },
+  {
+    "id": 1130,
+    "name": "Maribor",
+    "slug": "maribor",
+    "parent": 302
+  },
+  {
+    "id": 927,
+    "name": "Marrakech",
+    "slug": "marrakech",
+    "parent": 125
+  },
+  {
+    "id": 260,
+    "name": "Marseille",
+    "slug": "marseille",
+    "parent": 79
+  },
+  {
+    "id": 760,
+    "name": "Martigues",
+    "slug": "martigues",
+    "parent": 79
+  },
+  {
+    "id": 1068,
+    "name": "Matosinhos",
+    "slug": "matosinhos",
+    "parent": 92
+  },
+  {
+    "id": 898,
+    "name": "Mazatlán",
+    "slug": "mazatlan",
+    "parent": 69
+  },
+  {
+    "id": 570,
+    "name": "Mechelen",
+    "slug": "mechelen",
+    "parent": 237
+  },
+  {
+    "id": 67,
+    "name": "Medellín",
+    "slug": "medellin",
+    "parent": 66
+  },
+  {
+    "id": 930,
+    "name": "Meknès",
+    "slug": "meknes",
+    "parent": 125
+  },
+  {
+    "id": 1341,
+    "name": "Melo",
+    "slug": "melo",
+    "parent": 145
+  },
+  {
+    "id": 1326,
+    "name": "Memphis",
+    "slug": "memphis",
+    "parent": 141
+  },
+  {
+    "id": 531,
+    "name": "Mendoza",
+    "slug": "mendoza",
+    "parent": 60
+  },
+  {
+    "id": 907,
+    "name": "Mérida",
+    "slug": "merida",
+    "parent": 69
+  },
+  {
+    "id": 552,
+    "name": "Merlo",
+    "slug": "merlo",
+    "parent": 60
+  },
+  {
+    "id": 741,
+    "name": "Metz",
+    "slug": "metz",
+    "parent": 79
+  },
+  {
+    "id": 69,
+    "name": "Mexico",
+    "slug": "mexico",
+    "parent": 68
+  },
+  {
+    "id": 70,
+    "name": "Mexico City",
+    "slug": "mexico-city",
+    "parent": 69
+  },
+  {
+    "id": 821,
+    "name": "Mezőkövesd",
+    "slug": "mezokovesd",
+    "parent": 118
+  },
+  {
+    "id": 144,
+    "name": "Miami",
+    "slug": "miami",
+    "parent": 141
+  },
+  {
+    "id": 1277,
+    "name": "Middlesbrough",
+    "slug": "middlesbrough",
+    "parent": 115
+  },
+  {
+    "id": 1026,
+    "name": "Mielec",
+    "slug": "mielec",
+    "parent": 85
+  },
+  {
+    "id": 1099,
+    "name": "Miercurea Ciuc",
+    "slug": "miercurea-ciuc-romania",
+    "parent": 132
+  },
+  {
+    "id": 833,
+    "name": "Miercurea Ciuc",
+    "slug": "miercurea-ciuc",
+    "parent": 118
+  },
+  {
+    "id": 96,
+    "name": "Milan",
+    "slug": "milan",
+    "parent": 94
+  },
+  {
+    "id": 1444,
+    "name": "Milwaukee",
+    "slug": "milwaukee",
+    "parent": 141
+  },
+  {
+    "id": 1445,
+    "name": "Minneapolis",
+    "slug": "minneapolis",
+    "parent": 141
+  },
+  {
+    "id": 1095,
+    "name": "Mioveni",
+    "slug": "mioveni",
+    "parent": 132
+  },
+  {
+    "id": 1179,
+    "name": "Miranda de Ebro",
+    "slug": "miranda-de-ebro",
+    "parent": 76
+  },
+  {
+    "id": 605,
+    "name": "Mirassol",
+    "slug": "mirassol",
+    "parent": 63
+  },
+  {
+    "id": 818,
+    "name": "Miskolc",
+    "slug": "miskolc",
+    "parent": 118
+  },
+  {
+    "id": 991,
+    "name": "Mjøndalen",
+    "slug": "mjondalen",
+    "parent": 264
+  },
+  {
+    "id": 683,
+    "name": "Mladá Boleslav",
+    "slug": "mlada-boleslav",
+    "parent": 72
+  },
+  {
+    "id": 873,
+    "name": "Modena",
+    "slug": "modena",
+    "parent": 94
+  },
+  {
+    "id": 923,
+    "name": "Mohammédia",
+    "slug": "mohammedia",
+    "parent": 125
+  },
+  {
+    "id": 972,
+    "name": "Molde",
+    "slug": "molde",
+    "parent": 264
+  },
+  {
+    "id": 1466,
+    "name": "Monaco",
+    "slug": "monaco-europe",
+    "parent": 71
+  },
+  {
+    "id": 1467,
+    "name": "Monaco",
+    "slug": "monaco-monaco-europe",
+    "parent": 1466
+  },
+  {
+    "id": 727,
+    "name": "Monaco",
+    "slug": "monaco",
+    "parent": 79
+  },
+  {
+    "id": 773,
+    "name": "Mönchengladbach",
+    "slug": "monchengladbach",
+    "parent": 87
+  },
+  {
+    "id": 644,
+    "name": "Montería",
+    "slug": "monteria",
+    "parent": 66
+  },
+  {
+    "id": 888,
+    "name": "Monterrey",
+    "slug": "monterrey",
+    "parent": 69
+  },
+  {
+    "id": 146,
+    "name": "Montevideo",
+    "slug": "montevideo",
+    "parent": 145
+  },
+  {
+    "id": 734,
+    "name": "Montpellier",
+    "slug": "montpellier",
+    "parent": 79
+  },
+  {
+    "id": 1306,
+    "name": "Montreal",
+    "slug": "montreal",
+    "parent": 1305
+  },
+  {
+    "id": 856,
+    "name": "Monza",
+    "slug": "monza",
+    "parent": 94
+  },
+  {
+    "id": 1050,
+    "name": "Moreira de Cónegos",
+    "slug": "moreira-de-conegos",
+    "parent": 92
+  },
+  {
+    "id": 906,
+    "name": "Morelia",
+    "slug": "morelia",
+    "parent": 69
+  },
+  {
+    "id": 125,
+    "name": "Morocco",
+    "slug": "morocco",
+    "parent": 122
+  },
+  {
+    "id": 547,
+    "name": "Morón",
+    "slug": "moron",
+    "parent": 60
+  },
+  {
+    "id": 983,
+    "name": "Moss",
+    "slug": "moss",
+    "parent": 264
+  },
+  {
+    "id": 242,
+    "name": "Munich",
+    "slug": "munich",
+    "parent": 87
+  },
+  {
+    "id": 789,
+    "name": "Münster",
+    "slug": "munster",
+    "parent": 87
+  },
+  {
+    "id": 1131,
+    "name": "Murska Sobota",
+    "slug": "murska-sobota",
+    "parent": 302
+  },
+  {
+    "id": 736,
+    "name": "Nantes",
+    "slug": "nantes",
+    "parent": 79
+  },
+  {
+    "id": 95,
+    "name": "Naples",
+    "slug": "naples",
+    "parent": 94
+  },
+  {
+    "id": 1014,
+    "name": "Nasca",
+    "slug": "nasca",
+    "parent": 137
+  },
+  {
+    "id": 1307,
+    "name": "Nashville",
+    "slug": "nashville",
+    "parent": 141
+  },
+  {
+    "id": 606,
+    "name": "Natal",
+    "slug": "natal",
+    "parent": 63
+  },
+  {
+    "id": 650,
+    "name": "Neiva",
+    "slug": "neiva",
+    "parent": 66
+  },
+  {
+    "id": 130,
+    "name": "Netherlands",
+    "slug": "netherlands",
+    "parent": 71
+  },
+  {
+    "id": 1228,
+    "name": "Neuchâtel",
+    "slug": "neuchatel",
+    "parent": 250
+  },
+  {
+    "id": 1446,
+    "name": "New Orleans",
+    "slug": "new-orleans",
+    "parent": 141
+  },
+  {
+    "id": 1447,
+    "name": "New York",
+    "slug": "new-york",
+    "parent": 141
+  },
+  {
+    "id": 1309,
+    "name": "New York City",
+    "slug": "new-york-city",
+    "parent": 141
+  },
+  {
+    "id": 1489,
+    "name": "Newark",
+    "slug": "newark",
+    "parent": 141
+  },
+  {
+    "id": 1262,
+    "name": "Newcastle upon Tyne",
+    "slug": "newcastle-upon-tyne",
+    "parent": 115
+  },
+  {
+    "id": 730,
+    "name": "Nice",
+    "slug": "nice",
+    "parent": 79
+  },
+  {
+    "id": 1038,
+    "name": "Nieciecza",
+    "slug": "nieciecza",
+    "parent": 85
+  },
+  {
+    "id": 1044,
+    "name": "Niepołomice",
+    "slug": "niepolomice",
+    "parent": 85
+  },
+  {
+    "id": 943,
+    "name": "Nijmegen",
+    "slug": "nijmegen",
+    "parent": 130
+  },
+  {
+    "id": 1123,
+    "name": "Niš",
+    "slug": "nis",
+    "parent": 81
+  },
+  {
+    "id": 1199,
+    "name": "Norrköping",
+    "slug": "norrkoping",
+    "parent": 235
+  },
+  {
+    "id": 68,
+    "name": "North America",
+    "slug": "north-america",
+    "parent": 0
+  },
+  {
+    "id": 264,
+    "name": "Norway",
+    "slug": "norway",
+    "parent": 71
+  },
+  {
+    "id": 1278,
+    "name": "Norwich",
+    "slug": "norwich",
+    "parent": 115
+  },
+  {
+    "id": 995,
+    "name": "Notodden",
+    "slug": "notodden",
+    "parent": 264
+  },
+  {
+    "id": 1266,
+    "name": "Nottingham",
+    "slug": "nottingham",
+    "parent": 115
+  },
+  {
+    "id": 1139,
+    "name": "Nova Gorica",
+    "slug": "nova-gorica",
+    "parent": 302
+  },
+  {
+    "id": 1111,
+    "name": "Novi Pazar",
+    "slug": "novi-pazar",
+    "parent": 81
+  },
+  {
+    "id": 1106,
+    "name": "Novi Sad",
+    "slug": "novi-sad",
+    "parent": 81
+  },
+  {
+    "id": 600,
+    "name": "Novo Horizonte",
+    "slug": "novo-horizonte",
+    "parent": 63
+  },
+  {
+    "id": 1143,
+    "name": "Novo Mesto",
+    "slug": "novo-mesto",
+    "parent": 302
+  },
+  {
+    "id": 1004,
+    "name": "Nueva Cajamarca",
+    "slug": "nueva-cajamarca",
+    "parent": 137
+  },
+  {
+    "id": 785,
+    "name": "Nuremberg",
+    "slug": "nuremberg",
+    "parent": 87
+  },
+  {
+    "id": 822,
+    "name": "Nyíregyháza",
+    "slug": "nyiregyhaza",
+    "parent": 118
+  },
+  {
+    "id": 1230,
+    "name": "Nyon",
+    "slug": "nyon",
+    "parent": 250
+  },
+  {
+    "id": 1329,
+    "name": "Oakland",
+    "slug": "oakland",
+    "parent": 141
+  },
+  {
+    "id": 911,
+    "name": "Oaxaca City",
+    "slug": "oaxaca-city",
+    "parent": 69
+  },
+  {
+    "id": 1481,
+    "name": "Oberá",
+    "slug": "obera",
+    "parent": 60
+  },
+  {
+    "id": 1114,
+    "name": "Odžaci",
+    "slug": "odzaci",
+    "parent": 81
+  },
+  {
+    "id": 1448,
+    "name": "Oklahoma City",
+    "slug": "oklahoma-city",
+    "parent": 141
+  },
+  {
+    "id": 1476,
+    "name": "Oliva",
+    "slug": "oliva",
+    "parent": 60
+  },
+  {
+    "id": 1067,
+    "name": "Oliveira de Azeméis",
+    "slug": "oliveira-de-azemeis",
+    "parent": 92
+  },
+  {
+    "id": 682,
+    "name": "Olomouc",
+    "slug": "olomouc",
+    "parent": 72
+  },
+  {
+    "id": 695,
+    "name": "Opava",
+    "slug": "opava",
+    "parent": 72
+  },
+  {
+    "id": 1035,
+    "name": "Opole",
+    "slug": "opole",
+    "parent": 85
+  },
+  {
+    "id": 1205,
+    "name": "Örebro",
+    "slug": "orebro",
+    "parent": 235
+  },
+  {
+    "id": 674,
+    "name": "Oriovac",
+    "slug": "oriovac",
+    "parent": 128
+  },
+  {
+    "id": 1311,
+    "name": "Orlando",
+    "slug": "orlando",
+    "parent": 141
+  },
+  {
+    "id": 663,
+    "name": "Osijek",
+    "slug": "osijek",
+    "parent": 128
+  },
+  {
+    "id": 978,
+    "name": "Oslo",
+    "slug": "oslo",
+    "parent": 264
+  },
+  {
+    "id": 965,
+    "name": "Oss",
+    "slug": "oss",
+    "parent": 130
+  },
+  {
+    "id": 1212,
+    "name": "Östersund",
+    "slug": "ostersund",
+    "parent": 235
+  },
+  {
+    "id": 680,
+    "name": "Ostrava",
+    "slug": "ostrava",
+    "parent": 72
+  },
+  {
+    "id": 1491,
+    "name": "Ottawa",
+    "slug": "ottawa",
+    "parent": 1305
+  },
+  {
+    "id": 937,
+    "name": "Oued Zem",
+    "slug": "oued-zem",
+    "parent": 125
+  },
+  {
+    "id": 938,
+    "name": "Oujda",
+    "slug": "oujda",
+    "parent": 125
+  },
+  {
+    "id": 1170,
+    "name": "Oviedo",
+    "slug": "oviedo",
+    "parent": 76
+  },
+  {
+    "id": 1279,
+    "name": "Oxford",
+    "slug": "oxford",
+    "parent": 115
+  },
+  {
+    "id": 1016,
+    "name": "Pacasmayo",
+    "slug": "pacasmayo",
+    "parent": 137
+  },
+  {
+    "id": 890,
+    "name": "Pachuca",
+    "slug": "pachuca",
+    "parent": 69
+  },
+  {
+    "id": 781,
+    "name": "Paderborn",
+    "slug": "paderborn",
+    "parent": 87
+  },
+  {
+    "id": 813,
+    "name": "Paks",
+    "slug": "paks",
+    "parent": 118
+  },
+  {
+    "id": 870,
+    "name": "Palermo",
+    "slug": "palermo",
+    "parent": 94
+  },
+  {
+    "id": 1160,
+    "name": "Palma",
+    "slug": "palma",
+    "parent": 76
+  },
+  {
+    "id": 656,
+    "name": "Palmira",
+    "slug": "palmira",
+    "parent": 66
+  },
+  {
+    "id": 1158,
+    "name": "Pamplona",
+    "slug": "pamplona",
+    "parent": 76
+  },
+  {
+    "id": 1113,
+    "name": "Pančevo",
+    "slug": "pancevo",
+    "parent": 81
+  },
+  {
+    "id": 1676,
+    "name": "Paraguay",
+    "slug": "paraguay",
+    "parent": 59
+  },
+  {
+    "id": 562,
+    "name": "Paraná",
+    "slug": "parana",
+    "parent": 60
+  },
+  {
+    "id": 688,
+    "name": "Pardubice",
+    "slug": "pardubice",
+    "parent": 72
+  },
+  {
+    "id": 80,
+    "name": "Paris",
+    "slug": "paris",
+    "parent": 79
+  },
+  {
+    "id": 867,
+    "name": "Parma",
+    "slug": "parma",
+    "parent": 94
+  },
+  {
+    "id": 641,
+    "name": "Pasto",
+    "slug": "pasto",
+    "parent": 66
+  },
+  {
+    "id": 805,
+    "name": "Patras",
+    "slug": "patras",
+    "parent": 83
+  },
+  {
+    "id": 753,
+    "name": "Pau",
+    "slug": "pau",
+    "parent": 79
+  },
+  {
+    "id": 1338,
+    "name": "Pawtucket",
+    "slug": "pawtucket",
+    "parent": 141
+  },
+  {
+    "id": 828,
+    "name": "Pécs",
+    "slug": "pecs",
+    "parent": 118
+  },
+  {
+    "id": 708,
+    "name": "Pelileo",
+    "slug": "pelileo",
+    "parent": 279
+  },
+  {
+    "id": 1061,
+    "name": "Penafiel",
+    "slug": "penafiel",
+    "parent": 92
+  },
+  {
+    "id": 646,
+    "name": "Pereira",
+    "slug": "pereira",
+    "parent": 66
+  },
+  {
+    "id": 794,
+    "name": "Peristeri",
+    "slug": "peristeri",
+    "parent": 83
+  },
+  {
+    "id": 137,
+    "name": "Peru",
+    "slug": "peru",
+    "parent": 59
+  },
+  {
+    "id": 1449,
+    "name": "Philadelphia",
+    "slug": "philadelphia",
+    "parent": 141
+  },
+  {
+    "id": 1319,
+    "name": "Phoenix",
+    "slug": "phoenix",
+    "parent": 141
+  },
+  {
+    "id": 1100,
+    "name": "Piatra Neamț",
+    "slug": "piatra-neamt",
+    "parent": 132
+  },
+  {
+    "id": 657,
+    "name": "Piedecuesta",
+    "slug": "piedecuesta",
+    "parent": 66
+  },
+  {
+    "id": 261,
+    "name": "Piraeus",
+    "slug": "piraeus",
+    "parent": 83
+  },
+  {
+    "id": 300,
+    "name": "Pisa",
+    "slug": "pisa",
+    "parent": 94
+  },
+  {
+    "id": 1334,
+    "name": "Pittsburgh",
+    "slug": "pittsburgh",
+    "parent": 141
+  },
+  {
+    "id": 1003,
+    "name": "Piura",
+    "slug": "piura",
+    "parent": 137
+  },
+  {
+    "id": 1036,
+    "name": "Płock",
+    "slug": "plock",
+    "parent": 85
+  },
+  {
+    "id": 1082,
+    "name": "Ploiești",
+    "slug": "ploiesti",
+    "parent": 132
+  },
+  {
+    "id": 1280,
+    "name": "Plymouth",
+    "slug": "plymouth",
+    "parent": 115
+  },
+  {
+    "id": 679,
+    "name": "Plzeň",
+    "slug": "plzen",
+    "parent": 72
+  },
+  {
+    "id": 85,
+    "name": "Poland",
+    "slug": "poland",
+    "parent": 71
+  },
+  {
+    "id": 1059,
+    "name": "Ponta Delgada",
+    "slug": "ponta-delgada",
+    "parent": 92
+  },
+  {
+    "id": 715,
+    "name": "Port Said",
+    "slug": "port-said",
+    "parent": 123
+  },
+  {
+    "id": 1058,
+    "name": "Portimão",
+    "slug": "portimao",
+    "parent": 92
+  },
+  {
+    "id": 1313,
+    "name": "Portland",
+    "slug": "portland",
+    "parent": 141
+  },
+  {
+    "id": 114,
+    "name": "Porto",
+    "slug": "porto",
+    "parent": 92
+  },
+  {
+    "id": 281,
+    "name": "Porto Alegre",
+    "slug": "portoalegre",
+    "parent": 63
+  },
+  {
+    "id": 591,
+    "name": "Porto Alegre",
+    "slug": "porto-alegre",
+    "parent": 63
+  },
+  {
+    "id": 1499,
+    "name": "Portsmouth",
+    "slug": "portsmouth",
+    "parent": 115
+  },
+  {
+    "id": 92,
+    "name": "Portugal",
+    "slug": "portugal",
+    "parent": 71
+  },
+  {
+    "id": 1074,
+    "name": "Póvoa de Varzim",
+    "slug": "povoa-de-varzim",
+    "parent": 92
+  },
+  {
+    "id": 327,
+    "name": "Poznan",
+    "slug": "poznan",
+    "parent": 85
+  },
+  {
+    "id": 73,
+    "name": "Prague",
+    "slug": "prague",
+    "parent": 72
+  },
+  {
+    "id": 1281,
+    "name": "Preston",
+    "slug": "preston",
+    "parent": 115
+  },
+  {
+    "id": 697,
+    "name": "Prostějov",
+    "slug": "prostejov",
+    "parent": 72
+  },
+  {
+    "id": 1040,
+    "name": "Pruszków",
+    "slug": "pruszkow",
+    "parent": 85
+  },
+  {
+    "id": 895,
+    "name": "Puebla",
+    "slug": "puebla",
+    "parent": 69
+  },
+  {
+    "id": 545,
+    "name": "Puerto Madryn",
+    "slug": "puerto-madryn",
+    "parent": 60
+  },
+  {
+    "id": 662,
+    "name": "Pula",
+    "slug": "pula",
+    "parent": 128
+  },
+  {
+    "id": 2453,
+    "name": "Qatar",
+    "slug": "qatar",
+    "parent": 1468
+  },
+  {
+    "id": 897,
+    "name": "Querétaro",
+    "slug": "queretaro",
+    "parent": 69
+  },
+  {
+    "id": 632,
+    "name": "Quillota",
+    "slug": "quillota",
+    "parent": 139
+  },
+  {
+    "id": 540,
+    "name": "Quilmes",
+    "slug": "quilmes",
+    "parent": 60
+  },
+  {
+    "id": 280,
+    "name": "Quito",
+    "slug": "quito",
+    "parent": 279
+  },
+  {
+    "id": 916,
+    "name": "Rabat",
+    "slug": "rabat",
+    "parent": 125
+  },
+  {
+    "id": 1028,
+    "name": "Radom",
+    "slug": "radom",
+    "parent": 85
+  },
+  {
+    "id": 1134,
+    "name": "Radomlje",
+    "slug": "radomlje",
+    "parent": 302
+  },
+  {
+    "id": 543,
+    "name": "Rafaela",
+    "slug": "rafaela",
+    "parent": 60
+  },
+  {
+    "id": 1485,
+    "name": "Raleigh",
+    "slug": "raleigh",
+    "parent": 141
+  },
+  {
+    "id": 618,
+    "name": "Rancagua",
+    "slug": "rancagua",
+    "parent": 139
+  },
+  {
+    "id": 985,
+    "name": "Raufoss",
+    "slug": "raufoss",
+    "parent": 264
+  },
+  {
+    "id": 1142,
+    "name": "Ravne na Koroškem",
+    "slug": "ravne-na-koroskem",
+    "parent": 302
+  },
+  {
+    "id": 594,
+    "name": "Recife",
+    "slug": "recife",
+    "parent": 63
+  },
+  {
+    "id": 790,
+    "name": "Regensburg",
+    "slug": "regensburg",
+    "parent": 87
+  },
+  {
+    "id": 874,
+    "name": "Reggio Emilia",
+    "slug": "reggio-emilia",
+    "parent": 94
+  },
+  {
+    "id": 733,
+    "name": "Reims",
+    "slug": "reims",
+    "parent": 79
+  },
+  {
+    "id": 732,
+    "name": "Rennes",
+    "slug": "rennes",
+    "parent": 79
+  },
+  {
+    "id": 1089,
+    "name": "Reșița",
+    "slug": "resita",
+    "parent": 132
+  },
+  {
+    "id": 808,
+    "name": "Rhodes",
+    "slug": "rhodes",
+    "parent": 83
+  },
+  {
+    "id": 660,
+    "name": "Rijeka",
+    "slug": "rijeka",
+    "parent": 128
+  },
+  {
+    "id": 538,
+    "name": "Río Cuarto",
+    "slug": "rio-cuarto",
+    "parent": 60
+  },
+  {
+    "id": 64,
+    "name": "Rio de Janeiro",
+    "slug": "rio-de-janeiro",
+    "parent": 63
+  },
+  {
+    "id": 635,
+    "name": "Rionegro",
+    "slug": "rionegro",
+    "parent": 66
+  },
+  {
+    "id": 1247,
+    "name": "Rize",
+    "slug": "rize",
+    "parent": 89
+  },
+  {
+    "id": 755,
+    "name": "Rodez",
+    "slug": "rodez",
+    "parent": 79
+  },
+  {
+    "id": 1135,
+    "name": "Rogaška Slatina",
+    "slug": "rogaska-slatina",
+    "parent": 302
+  },
+  {
+    "id": 132,
+    "name": "Romania",
+    "slug": "romania",
+    "parent": 71
+  },
+  {
+    "id": 97,
+    "name": "Rome",
+    "slug": "rome",
+    "parent": 94
+  },
+  {
+    "id": 62,
+    "name": "Rosario",
+    "slug": "rosario",
+    "parent": 60
+  },
+  {
+    "id": 1291,
+    "name": "Rotherham",
+    "slug": "rotherham",
+    "parent": 115
+  },
+  {
+    "id": 940,
+    "name": "Rotterdam",
+    "slug": "rotterdam",
+    "parent": 130
+  },
+  {
+    "id": 1041,
+    "name": "Rzeszów",
+    "slug": "rzeszow",
+    "parent": 85
+  },
+  {
+    "id": 1118,
+    "name": "Šabac",
+    "slug": "sabac",
+    "parent": 81
+  },
+  {
+    "id": 1321,
+    "name": "Sacramento",
+    "slug": "sacramento",
+    "parent": 141
+  },
+  {
+    "id": 918,
+    "name": "Safi",
+    "slug": "safi",
+    "parent": 125
+  },
+  {
+    "id": 1304,
+    "name": "Saint Paul",
+    "slug": "saint-paul",
+    "parent": 141
+  },
+  {
+    "id": 239,
+    "name": "Saint-Etienne",
+    "slug": "saint-etienne",
+    "parent": 79
+  },
+  {
+    "id": 573,
+    "name": "Saint-Gilles",
+    "slug": "saint-gilles",
+    "parent": 237
+  },
+  {
+    "id": 759,
+    "name": "Saint-Ouen",
+    "slug": "saint-ouen",
+    "parent": 79
+  },
+  {
+    "id": 1253,
+    "name": "Sakarya",
+    "slug": "sakarya",
+    "parent": 89
+  },
+  {
+    "id": 1668,
+    "name": "Sakhir",
+    "slug": "sakhir",
+    "parent": 1659
+  },
+  {
+    "id": 934,
+    "name": "Salé",
+    "slug": "sale",
+    "parent": 125
+  },
+  {
+    "id": 1451,
+    "name": "Salt Lake City",
+    "slug": "salt-lake-city",
+    "parent": 141
+  },
+  {
+    "id": 1347,
+    "name": "Salto",
+    "slug": "salto",
+    "parent": 145
+  },
+  {
+    "id": 588,
+    "name": "Salvador",
+    "slug": "salvador",
+    "parent": 63
+  },
+  {
+    "id": 1244,
+    "name": "Samsun",
+    "slug": "samsun",
+    "parent": 89
+  },
+  {
+    "id": 1450,
+    "name": "San Antonio",
+    "slug": "san-antonio",
+    "parent": 141
+  },
+  {
+    "id": 629,
+    "name": "San Bernardo",
+    "slug": "san-bernardo",
+    "parent": 139
+  },
+  {
+    "id": 1346,
+    "name": "San Carlos",
+    "slug": "san-carlos",
+    "parent": 145
+  },
+  {
+    "id": 1465,
+    "name": "San Diego",
+    "slug": "san-diego",
+    "parent": 141
+  },
+  {
+    "id": 627,
+    "name": "San Felipe",
+    "slug": "san-felipe",
+    "parent": 139
+  },
+  {
+    "id": 1443,
+    "name": "San Francisco",
+    "slug": "san-francisco",
+    "parent": 141
+  },
+  {
+    "id": 2539,
+    "name": "San Jose",
+    "slug": "san-jose-costa-rica",
+    "parent": 2538
+  },
+  {
+    "id": 456,
+    "name": "San Jose",
+    "slug": "san-jose",
+    "parent": 141
+  },
+  {
+    "id": 541,
+    "name": "San Juan",
+    "slug": "san-juan",
+    "parent": 60
+  },
+  {
+    "id": 899,
+    "name": "San Luis Potosí",
+    "slug": "san-luis-potosi",
+    "parent": 69
+  },
+  {
+    "id": 558,
+    "name": "San Miguel",
+    "slug": "san-miguel",
+    "parent": 60
+  },
+  {
+    "id": 523,
+    "name": "San Miguel de Tucumán",
+    "slug": "san-miguel-de-tucuman",
+    "parent": 60
+  },
+  {
+    "id": 889,
+    "name": "San Nicolás de los Garza",
+    "slug": "san-nicolas-de-los-garza",
+    "parent": 69
+  },
+  {
+    "id": 539,
+    "name": "San Salvador de Jujuy",
+    "slug": "san-salvador-de-jujuy",
+    "parent": 60
+  },
+  {
+    "id": 263,
+    "name": "San Sebastian",
+    "slug": "san-sebastian",
+    "parent": 76
+  },
+  {
+    "id": 979,
+    "name": "Sandefjord",
+    "slug": "sandefjord",
+    "parent": 264
+  },
+  {
+    "id": 993,
+    "name": "Sandnes",
+    "slug": "sandnes",
+    "parent": 264
+  },
+  {
+    "id": 1314,
+    "name": "Sandy",
+    "slug": "sandy",
+    "parent": 141
+  },
+  {
+    "id": 705,
+    "name": "Sangolquí",
+    "slug": "sangolqui",
+    "parent": 279
+  },
+  {
+    "id": 1256,
+    "name": "Şanlıurfa",
+    "slug": "sanliurfa",
+    "parent": 89
+  },
+  {
+    "id": 1461,
+    "name": "Santa Clara",
+    "slug": "santa-clara",
+    "parent": 141
+  },
+  {
+    "id": 631,
+    "name": "Santa Cruz",
+    "slug": "santa-cruz",
+    "parent": 139
+  },
+  {
+    "id": 1174,
+    "name": "Santa Cruz de Tenerife",
+    "slug": "santa-cruz-de-tenerife",
+    "parent": 76
+  },
+  {
+    "id": 536,
+    "name": "Santa Fe",
+    "slug": "santa-fe",
+    "parent": 60
+  },
+  {
+    "id": 1064,
+    "name": "Santa Maria da Feira",
+    "slug": "santa-maria-da-feira",
+    "parent": 92
+  },
+  {
+    "id": 647,
+    "name": "Santa Marta",
+    "slug": "santa-marta",
+    "parent": 66
+  },
+  {
+    "id": 1171,
+    "name": "Santander",
+    "slug": "santander",
+    "parent": 76
+  },
+  {
+    "id": 140,
+    "name": "Santiago",
+    "slug": "santiago",
+    "parent": 139
+  },
+  {
+    "id": 526,
+    "name": "Santiago del Estero",
+    "slug": "santiago-del-estero",
+    "parent": 60
+  },
+  {
+    "id": 293,
+    "name": "Santos",
+    "slug": "santos",
+    "parent": 63
+  },
+  {
+    "id": 608,
+    "name": "São Luís",
+    "slug": "sao-luis",
+    "parent": 63
+  },
+  {
+    "id": 65,
+    "name": "São Paulo",
+    "slug": "sao-paulo",
+    "parent": 63
+  },
+  {
+    "id": 1536,
+    "name": "Sarajevo",
+    "slug": "sarajevo",
+    "parent": 1535
+  },
+  {
+    "id": 550,
+    "name": "Sarandí",
+    "slug": "sarandi",
+    "parent": 60
+  },
+  {
+    "id": 974,
+    "name": "Sarpsborg",
+    "slug": "sarpsborg",
+    "parent": 264
+  },
+  {
+    "id": 1377,
+    "name": "Sassuolo",
+    "slug": "sassuolo",
+    "parent": 94
+  },
+  {
+    "id": 1232,
+    "name": "Schaffhausen",
+    "slug": "schaffhausen",
+    "parent": 250
+  },
+  {
+    "id": 1337,
+    "name": "Seaside",
+    "slug": "seaside",
+    "parent": 141
+  },
+  {
+    "id": 1315,
+    "name": "Seattle",
+    "slug": "seattle",
+    "parent": 141
+  },
+  {
+    "id": 1665,
+    "name": "Seoul",
+    "slug": "seoul",
+    "parent": 1662
+  },
+  {
+    "id": 584,
+    "name": "Seraing",
+    "slug": "seraing",
+    "parent": 237
+  },
+  {
+    "id": 81,
+    "name": "Serbia",
+    "slug": "serbia",
+    "parent": 71
+  },
+  {
+    "id": 797,
+    "name": "Serres",
+    "slug": "serres",
+    "parent": 83
+  },
+  {
+    "id": 675,
+    "name": "Sesvete",
+    "slug": "sesvete",
+    "parent": 128
+  },
+  {
+    "id": 135,
+    "name": "Sevilla",
+    "slug": "sevilla",
+    "parent": 76
+  },
+  {
+    "id": 1153,
+    "name": "Seville",
+    "slug": "seville",
+    "parent": 76
+  },
+  {
+    "id": 1148,
+    "name": "Sežana",
+    "slug": "sezana",
+    "parent": 302
+  },
+  {
+    "id": 699,
+    "name": "Sezimovo Ústí",
+    "slug": "sezimovo-usti",
+    "parent": 72
+  },
+  {
+    "id": 1080,
+    "name": "Sfântu Gheorghe",
+    "slug": "sfantu-gheorghe",
+    "parent": 132
+  },
+  {
+    "id": 1282,
+    "name": "Sheffield",
+    "slug": "sheffield",
+    "parent": 115
+  },
+  {
+    "id": 666,
+    "name": "Šibenik",
+    "slug": "sibenik",
+    "parent": 128
+  },
+  {
+    "id": 1081,
+    "name": "Sibiu",
+    "slug": "sibiu",
+    "parent": 132
+  },
+  {
+    "id": 766,
+    "name": "Sinsheim",
+    "slug": "sinsheim",
+    "parent": 87
+  },
+  {
+    "id": 572,
+    "name": "Sint-Truiden",
+    "slug": "sint-truiden",
+    "parent": 237
+  },
+  {
+    "id": 826,
+    "name": "Siófok",
+    "slug": "siofok",
+    "parent": 118
+  },
+  {
+    "id": 1223,
+    "name": "Sion",
+    "slug": "sion",
+    "parent": 250
+  },
+  {
+    "id": 946,
+    "name": "Sittard",
+    "slug": "sittard",
+    "parent": 130
+  },
+  {
+    "id": 1238,
+    "name": "Sivas",
+    "slug": "sivas",
+    "parent": 89
+  },
+  {
+    "id": 976,
+    "name": "Skien",
+    "slug": "skien",
+    "parent": 264
+  },
+  {
+    "id": 1209,
+    "name": "Skövde",
+    "slug": "skovde",
+    "parent": 235
+  },
+  {
+    "id": 839,
+    "name": "Sligo",
+    "slug": "sligo",
+    "parent": 294
+  },
+  {
+    "id": 1087,
+    "name": "Slobozia",
+    "slug": "slobozia",
+    "parent": 132
+  },
+  {
+    "id": 302,
+    "name": "Slovenia",
+    "slug": "slovenia",
+    "parent": 71
+  },
+  {
+    "id": 1150,
+    "name": "Slovenske Konjice",
+    "slug": "slovenske-konjice",
+    "parent": 302
+  },
+  {
+    "id": 1125,
+    "name": "Smederevo",
+    "slug": "smederevo",
+    "parent": 81
+  },
+  {
+    "id": 990,
+    "name": "Sogndal",
+    "slug": "sogndal",
+    "parent": 264
+  },
+  {
+    "id": 672,
+    "name": "Solin",
+    "slug": "solin",
+    "parent": 128
+  },
+  {
+    "id": 1195,
+    "name": "Solna",
+    "slug": "solna",
+    "parent": 235
+  },
+  {
+    "id": 924,
+    "name": "Soualem",
+    "slug": "soualem",
+    "parent": 125
+  },
+  {
+    "id": 59,
+    "name": "South America",
+    "slug": "south-america",
+    "parent": 0
+  },
+  {
+    "id": 1662,
+    "name": "South Korea",
+    "slug": "southkorea",
+    "parent": 1468
+  },
+  {
+    "id": 1269,
+    "name": "Southampton",
+    "slug": "southampton",
+    "parent": 115
+  },
+  {
+    "id": 76,
+    "name": "Spain",
+    "slug": "spain",
+    "parent": 71
+  },
+  {
+    "id": 784,
+    "name": "Spiesen-Elversberg",
+    "slug": "spiesen-elversberg",
+    "parent": 87
+  },
+  {
+    "id": 659,
+    "name": "Split",
+    "slug": "split",
+    "parent": 128
+  },
+  {
+    "id": 1115,
+    "name": "Sremska Mitrovica",
+    "slug": "sremska-mitrovica",
+    "parent": 81
+  },
+  {
+    "id": 1218,
+    "name": "St. Gallen",
+    "slug": "st-gallen",
+    "parent": 250
+  },
+  {
+    "id": 1316,
+    "name": "St. Louis",
+    "slug": "st-louis",
+    "parent": 141
+  },
+  {
+    "id": 1488,
+    "name": "St. Paul",
+    "slug": "st-paul",
+    "parent": 141
+  },
+  {
+    "id": 1325,
+    "name": "St. Petersburg",
+    "slug": "st-petersburg",
+    "parent": 141
+  },
+  {
+    "id": 971,
+    "name": "Stavanger",
+    "slug": "stavanger",
+    "parent": 264
+  },
+  {
+    "id": 236,
+    "name": "Stockholm",
+    "slug": "stockholm",
+    "parent": 235
+  },
+  {
+    "id": 1283,
+    "name": "Stoke-on-Trent",
+    "slug": "stoke-on-trent",
+    "parent": 115
+  },
+  {
+    "id": 737,
+    "name": "Strasbourg",
+    "slug": "strasbourg",
+    "parent": 79
+  },
+  {
+    "id": 763,
+    "name": "Stuttgart",
+    "slug": "stuttgart",
+    "parent": 87
+  },
+  {
+    "id": 1110,
+    "name": "Subotica",
+    "slug": "subotica",
+    "parent": 81
+  },
+  {
+    "id": 721,
+    "name": "Suez",
+    "slug": "suez",
+    "parent": 123
+  },
+  {
+    "id": 1006,
+    "name": "Sullana",
+    "slug": "sullana",
+    "parent": 137
+  },
+  {
+    "id": 1284,
+    "name": "Sunderland",
+    "slug": "sunderland",
+    "parent": 115
+  },
+  {
+    "id": 1210,
+    "name": "Sundsvall",
+    "slug": "sundsvall",
+    "parent": 235
+  },
+  {
+    "id": 1487,
+    "name": "Sunrise",
+    "slug": "sunrise",
+    "parent": 141
+  },
+  {
+    "id": 1285,
+    "name": "Swansea",
+    "slug": "swansea",
+    "parent": 115
+  },
+  {
+    "id": 235,
+    "name": "Sweden",
+    "slug": "sweden",
+    "parent": 71
+  },
+  {
+    "id": 250,
+    "name": "Switzerland",
+    "slug": "switzerland",
+    "parent": 71
+  },
+  {
+    "id": 1020,
+    "name": "Szczecin",
+    "slug": "szczecin",
+    "parent": 85
+  },
+  {
+    "id": 827,
+    "name": "Szeged",
+    "slug": "szeged",
+    "parent": 118
+  },
+  {
+    "id": 814,
+    "name": "Székesfehérvár",
+    "slug": "szekesfehervar",
+    "parent": 118
+  },
+  {
+    "id": 834,
+    "name": "Szombathely",
+    "slug": "szombathely",
+    "parent": 118
+  },
+  {
+    "id": 1348,
+    "name": "Tacuarembó",
+    "slug": "tacuarembo",
+    "parent": 145
+  },
+  {
+    "id": 628,
+    "name": "Talca",
+    "slug": "talca",
+    "parent": 139
+  },
+  {
+    "id": 616,
+    "name": "Talcahuano",
+    "slug": "talcahuano",
+    "parent": 139
+  },
+  {
+    "id": 1462,
+    "name": "Tampa",
+    "slug": "tampa",
+    "parent": 141
+  },
+  {
+    "id": 921,
+    "name": "Tangier",
+    "slug": "tangier",
+    "parent": 125
+  },
+  {
+    "id": 723,
+    "name": "Tanta",
+    "slug": "tanta",
+    "parent": 123
+  },
+  {
+    "id": 1091,
+    "name": "Târgoviște",
+    "slug": "targoviste",
+    "parent": 132
+  },
+  {
+    "id": 1097,
+    "name": "Târgu Jiu",
+    "slug": "targu-jiu",
+    "parent": 132
+  },
+  {
+    "id": 1000,
+    "name": "Tarma",
+    "slug": "tarma",
+    "parent": 137
+  },
+  {
+    "id": 1188,
+    "name": "Tarragona",
+    "slug": "tarragona",
+    "parent": 76
+  },
+  {
+    "id": 1472,
+    "name": "Tel Aviv",
+    "slug": "tel-aviv",
+    "parent": 1468
+  },
+  {
+    "id": 1483,
+    "name": "Tempe",
+    "slug": "tempe",
+    "parent": 141
+  },
+  {
+    "id": 542,
+    "name": "Temperley",
+    "slug": "temperley",
+    "parent": 60
+  },
+  {
+    "id": 634,
+    "name": "Temuco",
+    "slug": "temuco",
+    "parent": 139
+  },
+  {
+    "id": 1669,
+    "name": "Tennessee",
+    "slug": "tennessee",
+    "parent": 141
+  },
+  {
+    "id": 904,
+    "name": "Tepatitlán de Morelos",
+    "slug": "tepatitlan-de-morelos",
+    "parent": 69
+  },
+  {
+    "id": 685,
+    "name": "Teplice",
+    "slug": "teplice",
+    "parent": 72
+  },
+  {
+    "id": 879,
+    "name": "Terni",
+    "slug": "terni",
+    "parent": 94
+  },
+  {
+    "id": 922,
+    "name": "Tétouan",
+    "slug": "tetouan",
+    "parent": 125
+  },
+  {
+    "id": 954,
+    "name": "The Hague",
+    "slug": "the-hague",
+    "parent": 130
+  },
+  {
+    "id": 84,
+    "name": "Thessaloniki",
+    "slug": "thessaloniki",
+    "parent": 83
+  },
+  {
+    "id": 1224,
+    "name": "Thun",
+    "slug": "thun",
+    "parent": 250
+  },
+  {
+    "id": 900,
+    "name": "Tijuana",
+    "slug": "tijuana",
+    "parent": 69
+  },
+  {
+    "id": 953,
+    "name": "Tilburg",
+    "slug": "tilburg",
+    "parent": 130
+  },
+  {
+    "id": 2448,
+    "name": "Tirana",
+    "slug": "tirana",
+    "parent": 2447
+  },
+  {
+    "id": 829,
+    "name": "Tiszakécske",
+    "slug": "tiszakecske",
+    "parent": 118
+  },
+  {
+    "id": 1673,
+    "name": "Tokyo",
+    "slug": "tokyo",
+    "parent": 1672
+  },
+  {
+    "id": 1146,
+    "name": "Tolmin",
+    "slug": "tolmin",
+    "parent": 302
+  },
+  {
+    "id": 893,
+    "name": "Toluca",
+    "slug": "toluca",
+    "parent": 69
+  },
+  {
+    "id": 607,
+    "name": "Tombos",
+    "slug": "tombos",
+    "parent": 63
+  },
+  {
+    "id": 1069,
+    "name": "Tondela",
+    "slug": "tondela",
+    "parent": 92
+  },
+  {
+    "id": 1317,
+    "name": "Toronto",
+    "slug": "toronto",
+    "parent": 1305
+  },
+  {
+    "id": 892,
+    "name": "Torreón",
+    "slug": "torreon",
+    "parent": 69
+  },
+  {
+    "id": 1066,
+    "name": "Torres Vedras",
+    "slug": "torres-vedras",
+    "parent": 92
+  },
+  {
+    "id": 735,
+    "name": "Toulouse",
+    "slug": "toulouse",
+    "parent": 79
+  },
+  {
+    "id": 1236,
+    "name": "Trabzon",
+    "slug": "trabzon",
+    "parent": 89
+  },
+  {
+    "id": 852,
+    "name": "Tralee",
+    "slug": "tralee",
+    "parent": 294
+  },
+  {
+    "id": 1211,
+    "name": "Trelleborg",
+    "slug": "trelleborg",
+    "parent": 235
+  },
+  {
+    "id": 793,
+    "name": "Tripoli",
+    "slug": "tripoli",
+    "parent": 83
+  },
+  {
+    "id": 559,
+    "name": "Tristán Suárez",
+    "slug": "tristan-suarez",
+    "parent": 60
+  },
+  {
+    "id": 980,
+    "name": "Tromsø",
+    "slug": "tromso",
+    "parent": 264
+  },
+  {
+    "id": 265,
+    "name": "Trondheim",
+    "slug": "trondheim",
+    "parent": 264
+  },
+  {
+    "id": 756,
+    "name": "Troyes",
+    "slug": "troyes",
+    "parent": 79
+  },
+  {
+    "id": 1002,
+    "name": "Trujillo",
+    "slug": "trujillo",
+    "parent": 137
+  },
+  {
+    "id": 1332,
+    "name": "Tulsa",
+    "slug": "tulsa",
+    "parent": 141
+  },
+  {
+    "id": 651,
+    "name": "Tuluá",
+    "slug": "tulua",
+    "parent": 66
+  },
+  {
+    "id": 1101,
+    "name": "Tunari",
+    "slug": "tunari",
+    "parent": 132
+  },
+  {
+    "id": 640,
+    "name": "Tunja",
+    "slug": "tunja",
+    "parent": 66
+  },
+  {
+    "id": 257,
+    "name": "Turin",
+    "slug": "turin",
+    "parent": 94
+  },
+  {
+    "id": 89,
+    "name": "Turkey",
+    "slug": "turkey",
+    "parent": 71
+  },
+  {
+    "id": 1037,
+    "name": "Tychy",
+    "slug": "tychy",
+    "parent": 85
+  },
+  {
+    "id": 1119,
+    "name": "Ub",
+    "slug": "ub",
+    "parent": 81
+  },
+  {
+    "id": 859,
+    "name": "Udine",
+    "slug": "udine",
+    "parent": 94
+  },
+  {
+    "id": 681,
+    "name": "Uherské Hradiště",
+    "slug": "uherske-hradiste",
+    "parent": 72
+  },
+  {
+    "id": 791,
+    "name": "Ulm",
+    "slug": "ulm",
+    "parent": 87
+  },
+  {
+    "id": 1469,
+    "name": "United Arab Emirates",
+    "slug": "united-arab-emirates",
+    "parent": 1468
+  },
+  {
+    "id": 115,
+    "name": "United Kingdom",
+    "slug": "unitedkingdom",
+    "parent": 71
+  },
+  {
+    "id": 141,
+    "name": "United States",
+    "slug": "unitedstates",
+    "parent": 68
+  },
+  {
+    "id": 1197,
+    "name": "Uppsala",
+    "slug": "uppsala",
+    "parent": 235
+  },
+  {
+    "id": 914,
+    "name": "Uruapan",
+    "slug": "uruapan",
+    "parent": 69
+  },
+  {
+    "id": 145,
+    "name": "Uruguay",
+    "slug": "uruguay",
+    "parent": 59
+  },
+  {
+    "id": 944,
+    "name": "Utrecht",
+    "slug": "utrecht",
+    "parent": 130
+  },
+  {
+    "id": 1122,
+    "name": "Užice",
+    "slug": "uzice",
+    "parent": 81
+  },
+  {
+    "id": 1234,
+    "name": "Vaduz",
+    "slug": "vaduz",
+    "parent": 1233
+  },
+  {
+    "id": 1155,
+    "name": "Valencia",
+    "slug": "valencia",
+    "parent": 76
+  },
+  {
+    "id": 757,
+    "name": "Valenciennes",
+    "slug": "valenciennes",
+    "parent": 79
+  },
+  {
+    "id": 1164,
+    "name": "Valladolid",
+    "slug": "valladolid",
+    "parent": 76
+  },
+  {
+    "id": 637,
+    "name": "Valledupar",
+    "slug": "valledupar",
+    "parent": 66
+  },
+  {
+    "id": 625,
+    "name": "Valparaíso",
+    "slug": "valparaiso",
+    "parent": 139
+  },
+  {
+    "id": 1259,
+    "name": "Van",
+    "slug": "van",
+    "parent": 89
+  },
+  {
+    "id": 1318,
+    "name": "Vancouver",
+    "slug": "vancouver",
+    "parent": 1305
+  },
+  {
+    "id": 665,
+    "name": "Varaždin",
+    "slug": "varazdin",
+    "parent": 128
+  },
+  {
+    "id": 1204,
+    "name": "Varberg",
+    "slug": "varberg",
+    "parent": 235
+  },
+  {
+    "id": 1193,
+    "name": "Värnamo",
+    "slug": "varnamo",
+    "parent": 235
+  },
+  {
+    "id": 696,
+    "name": "Varnsdorf",
+    "slug": "varnsdorf",
+    "parent": 72
+  },
+  {
+    "id": 1202,
+    "name": "Växjö",
+    "slug": "vaxjo",
+    "parent": 235
+  },
+  {
+    "id": 661,
+    "name": "Velika Gorica",
+    "slug": "velika-gorica",
+    "parent": 128
+  },
+  {
+    "id": 966,
+    "name": "Velsen",
+    "slug": "velsen",
+    "parent": 130
+  },
+  {
+    "id": 863,
+    "name": "Venice",
+    "slug": "venice",
+    "parent": 94
+  },
+  {
+    "id": 963,
+    "name": "Venlo",
+    "slug": "venlo",
+    "parent": 130
+  },
+  {
+    "id": 857,
+    "name": "Verona",
+    "slug": "verona",
+    "parent": 94
+  },
+  {
+    "id": 533,
+    "name": "Vicente López",
+    "slug": "vicente-lopez",
+    "parent": 60
+  },
+  {
+    "id": 535,
+    "name": "Victoria",
+    "slug": "victoria",
+    "parent": 60
+  },
+  {
+    "id": 1428,
+    "name": "Vienna",
+    "slug": "vienna",
+    "parent": 1427
+  },
+  {
+    "id": 1159,
+    "name": "Vigo",
+    "slug": "vigo",
+    "parent": 76
+  },
+  {
+    "id": 1063,
+    "name": "Vila das Aves",
+    "slug": "vila-das-aves",
+    "parent": 92
+  },
+  {
+    "id": 1054,
+    "name": "Vila do Conde",
+    "slug": "vila-do-conde",
+    "parent": 92
+  },
+  {
+    "id": 1073,
+    "name": "Vila Franca de Xira",
+    "slug": "vila-franca-de-xira",
+    "parent": 92
+  },
+  {
+    "id": 1075,
+    "name": "Vila Verde",
+    "slug": "vila-verde",
+    "parent": 92
+  },
+  {
+    "id": 913,
+    "name": "Villahermosa",
+    "slug": "villahermosa",
+    "parent": 69
+  },
+  {
+    "id": 1154,
+    "name": "Villarreal",
+    "slug": "villarreal",
+    "parent": 76
+  },
+  {
+    "id": 655,
+    "name": "Villavicencio",
+    "slug": "villavicencio",
+    "parent": 66
+  },
+  {
+    "id": 1473,
+    "name": "Villeurbanne",
+    "slug": "villeurbanne",
+    "parent": 79
+  },
+  {
+    "id": 615,
+    "name": "Viña del Mar",
+    "slug": "vina-del-mar",
+    "parent": 139
+  },
+  {
+    "id": 669,
+    "name": "Vinkovci",
+    "slug": "vinkovci",
+    "parent": 128
+  },
+  {
+    "id": 1070,
+    "name": "Viseu",
+    "slug": "viseu",
+    "parent": 92
+  },
+  {
+    "id": 1156,
+    "name": "Vitoria-Gasteiz",
+    "slug": "vitoria-gasteiz",
+    "parent": 76
+  },
+  {
+    "id": 967,
+    "name": "Volendam",
+    "slug": "volendam",
+    "parent": 130
+  },
+  {
+    "id": 799,
+    "name": "Volos",
+    "slug": "volos",
+    "parent": 83
+  },
+  {
+    "id": 1086,
+    "name": "Voluntari",
+    "slug": "voluntari",
+    "parent": 132
+  },
+  {
+    "id": 1124,
+    "name": "Vršac",
+    "slug": "vrsac",
+    "parent": 81
+  },
+  {
+    "id": 668,
+    "name": "Vukovar",
+    "slug": "vukovar",
+    "parent": 128
+  },
+  {
+    "id": 694,
+    "name": "Vyškov",
+    "slug": "vyskov",
+    "parent": 72
+  },
+  {
+    "id": 951,
+    "name": "Waalwijk",
+    "slug": "waalwijk",
+    "parent": 130
+  },
+  {
+    "id": 1641,
+    "name": "Wals-Siezenheim",
+    "slug": "wals-siezenheim",
+    "parent": 1427
+  },
+  {
+    "id": 575,
+    "name": "Waregem",
+    "slug": "waregem",
+    "parent": 237
+  },
+  {
+    "id": 259,
+    "name": "Warsaw",
+    "slug": "warsaw",
+    "parent": 85
+  },
+  {
+    "id": 1452,
+    "name": "Washington",
+    "slug": "washington",
+    "parent": 141
+  },
+  {
+    "id": 1299,
+    "name": "Washington D.C.",
+    "slug": "washington-d-c",
+    "parent": 141
+  },
+  {
+    "id": 843,
+    "name": "Waterford",
+    "slug": "waterford",
+    "parent": 294
+  },
+  {
+    "id": 1286,
+    "name": "Watford",
+    "slug": "watford",
+    "parent": 115
+  },
+  {
+    "id": 1644,
+    "name": "Wattens",
+    "slug": "wattens",
+    "parent": 1427
+  },
+  {
+    "id": 1287,
+    "name": "West Bromwich",
+    "slug": "west-bromwich",
+    "parent": 115
+  },
+  {
+    "id": 574,
+    "name": "Westerlo",
+    "slug": "westerlo",
+    "parent": 237
+  },
+  {
+    "id": 849,
+    "name": "Wexford",
+    "slug": "wexford",
+    "parent": 294
+  },
+  {
+    "id": 1227,
+    "name": "Wil",
+    "slug": "wil",
+    "parent": 250
+  },
+  {
+    "id": 1492,
+    "name": "Winnipeg",
+    "slug": "winnipeg",
+    "parent": 1305
+  },
+  {
+    "id": 1220,
+    "name": "Winterthur",
+    "slug": "winterthur",
+    "parent": 250
+  },
+  {
+    "id": 771,
+    "name": "Wolfsburg",
+    "slug": "wolfsburg",
+    "parent": 87
+  },
+  {
+    "id": 1265,
+    "name": "Wolverhampton",
+    "slug": "wolverhampton",
+    "parent": 115
+  },
+  {
+    "id": 1498,
+    "name": "Wrexham",
+    "slug": "wrexham",
+    "parent": 115
+  },
+  {
+    "id": 1019,
+    "name": "Wrocław",
+    "slug": "wroclaw",
+    "parent": 85
+  },
+  {
+    "id": 1222,
+    "name": "Yverdon-les-Bains",
+    "slug": "yverdon-les-bains",
+    "parent": 250
+  },
+  {
+    "id": 1021,
+    "name": "Zabrze",
+    "slug": "zabrze",
+    "parent": 85
+  },
+  {
+    "id": 905,
+    "name": "Zacatecas",
+    "slug": "zacatecas",
+    "parent": 69
+  },
+  {
+    "id": 129,
+    "name": "Zagreb",
+    "slug": "zagreb",
+    "parent": 128
+  },
+  {
+    "id": 817,
+    "name": "Zalaegerszeg",
+    "slug": "zalaegerszeg",
+    "parent": 118
+  },
+  {
+    "id": 1098,
+    "name": "Zalău",
+    "slug": "zalau",
+    "parent": 132
+  },
+  {
+    "id": 903,
+    "name": "Zapopan",
+    "slug": "zapopan",
+    "parent": 69
+  },
+  {
+    "id": 1178,
+    "name": "Zaragoza",
+    "slug": "zaragoza",
+    "parent": 76
+  },
+  {
+    "id": 561,
+    "name": "Zárate",
+    "slug": "zarate",
+    "parent": 60
+  },
+  {
+    "id": 676,
+    "name": "Ždralovi",
+    "slug": "zdralovi",
+    "parent": 128
+  },
+  {
+    "id": 926,
+    "name": "Zemamra",
+    "slug": "zemamra",
+    "parent": 125
+  },
+  {
+    "id": 673,
+    "name": "Zmijavci",
+    "slug": "zmijavci",
+    "parent": 128
+  },
+  {
+    "id": 1217,
+    "name": "Zürich",
+    "slug": "zurich",
+    "parent": 250
+  },
+  {
+    "id": 948,
+    "name": "Zwolle",
+    "slug": "zwolle",
+    "parent": 130
+  }
+]
