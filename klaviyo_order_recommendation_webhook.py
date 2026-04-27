@@ -74,6 +74,12 @@ class NormalizedOrderPayload:
     order_id: str
 
 
+@dataclass(frozen=True)
+class ParsedWebhookBody:
+    payload: dict[str, Any]
+    raw_body: str
+
+
 def env_bool(name: str, default: bool = False) -> bool:
     value = os.getenv(name)
     if value is None:
@@ -743,8 +749,11 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
             self.write_json(404, {"status": "not_found"})
             return
 
+        parsed_body: ParsedWebhookBody | None = None
         try:
-            payload = self.read_json_body()
+            parsed_body = self.read_json_body()
+            payload = parsed_body.payload
+            self.log_request_debug(payload, parsed_body.raw_body)
             if self.config.log_incoming_payload:
                 print(
                     "Incoming webhook payload:\n"
@@ -755,10 +764,16 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
             result = process_order(payload, self.index, self.config)
             log_debug_summary(result, payload)
         except json.JSONDecodeError as exc:
-            self.write_json(400, {"status": "error", "reason": f"invalid_json: {exc}"})
+            reason = f"invalid_json: {exc}"
+            if parsed_body is None:
+                self.log_request_debug({}, getattr(exc, "doc", "")[:2000])
+            self.log_400_reason(reason)
+            self.write_json(400, {"status": "error", "reason": reason})
             return
         except ValueError as exc:
-            self.write_json(400, {"status": "error", "reason": str(exc)})
+            reason = str(exc)
+            self.log_400_reason(reason)
+            self.write_json(400, {"status": "error", "reason": reason})
             return
         except Exception as exc:  # Keep webhook failures visible to the caller.
             self.write_json(500, {"status": "error", "reason": str(exc)})
@@ -766,13 +781,14 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
 
         if result.get("status") == "error" and result.get("reason") in {"missing_email", "missing_product_titles"}:
             status_code = 400
+            self.log_400_reason(str(result.get("reason") or "validation_error"))
         elif result.get("status") in {"event_ready", "sent"}:
             status_code = 202
         else:
             status_code = 200
         self.write_json(status_code, result)
 
-    def read_json_body(self) -> dict[str, Any]:
+    def read_json_body(self) -> ParsedWebhookBody:
         raw_length = self.headers.get("Content-Length", "0")
         try:
             length = int(raw_length)
@@ -783,10 +799,40 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
         if length > MAX_WEBHOOK_BYTES:
             raise ValueError("webhook payload is too large")
         body = self.rfile.read(length)
-        payload = json.loads(body.decode("utf-8"))
+        raw_body = body.decode("utf-8")
+        payload = json.loads(raw_body)
         if not isinstance(payload, dict):
             raise ValueError("webhook payload must be a JSON object")
-        return payload
+        return ParsedWebhookBody(payload=payload, raw_body=raw_body)
+
+    def log_request_debug(self, payload: dict[str, Any], raw_body: str) -> None:
+        x_wc_headers = {
+            key: value
+            for key, value in self.headers.items()
+            if key.lower().startswith("x-wc-")
+        }
+        print(
+            json.dumps(
+                {
+                    "request_content_type": self.headers.get("Content-Type", ""),
+                    "x_wc_headers": x_wc_headers,
+                    "parsed_json_payload_keys": sorted(payload.keys()),
+                    "raw_json_payload_first_2000": raw_body[:2000],
+                },
+                ensure_ascii=False,
+                sort_keys=True,
+            ),
+            file=sys.stderr,
+            flush=True,
+        )
+
+    @staticmethod
+    def log_400_reason(reason: str) -> None:
+        print(
+            json.dumps({"returning_400_reason": reason}, sort_keys=True),
+            file=sys.stderr,
+            flush=True,
+        )
 
     def write_json(self, status_code: int, payload: dict[str, Any]) -> None:
         body = json.dumps(payload, indent=2, sort_keys=True).encode("utf-8")
