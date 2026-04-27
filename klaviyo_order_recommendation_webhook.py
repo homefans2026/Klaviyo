@@ -54,7 +54,6 @@ class Config:
     revision: str
     dry_run: bool
     min_recommendations: int
-    webhook_secret: str
     generic_fallback: bool
     log_incoming_payload: bool
 
@@ -66,6 +65,13 @@ class ProductMatch:
     matched_title: str
     match_type: str
     score: float
+
+
+@dataclass(frozen=True)
+class NormalizedOrderPayload:
+    email: str
+    product_titles: list[str]
+    order_id: str
 
 
 def env_bool(name: str, default: bool = False) -> bool:
@@ -229,6 +235,14 @@ def extract_product_titles(payload: dict[str, Any], include_generic: bool = Fals
     if include_generic:
         return unique_titles
     return [title for title in unique_titles if not is_generic_product_title(title)]
+
+
+def normalize_order_payload(payload: dict[str, Any]) -> NormalizedOrderPayload:
+    return NormalizedOrderPayload(
+        email=extract_email(payload),
+        product_titles=extract_product_titles(payload, include_generic=True),
+        order_id=extract_order_id(payload),
+    )
 
 
 class RecommendationIndex:
@@ -547,11 +561,12 @@ def send_klaviyo_event(payload: dict[str, Any], config: Config) -> dict[str, Any
 
 
 def process_order(payload: dict[str, Any], index: RecommendationIndex, config: Config) -> dict[str, Any]:
-    email = extract_email(payload)
-    raw_product_titles = extract_product_titles(payload, include_generic=True)
+    normalized_payload = normalize_order_payload(payload)
+    email = normalized_payload.email
+    raw_product_titles = normalized_payload.product_titles
     product_titles = [title for title in raw_product_titles if not is_generic_product_title(title)]
     fallback_purchased_product = first_nonempty(*(raw_product_titles or ["Unknown product"]))
-    order_id = extract_order_id(payload)
+    order_id = normalized_payload.order_id
 
     if not email:
         return {
@@ -633,11 +648,12 @@ def process_order(payload: dict[str, Any], index: RecommendationIndex, config: C
 
 
 def log_debug_summary(result: dict[str, Any], payload: dict[str, Any]) -> None:
-    email = clean_string(result.get("email") or extract_email(payload))
+    normalized_payload = normalize_order_payload(payload)
+    email = clean_string(result.get("email") or normalized_payload.email)
     product_titles = result.get("detected_product_titles")
     if not isinstance(product_titles, list):
-        product_titles = extract_product_titles(payload, include_generic=True)
-    order_id = clean_string(result.get("order_id") or extract_order_id(payload))
+        product_titles = normalized_payload.product_titles
+    order_id = clean_string(result.get("order_id") or normalized_payload.order_id)
     recommendation_mode = clean_string(result.get("recommendation_mode"))
     if not recommendation_mode:
         event_properties = deep_get(result, ("klaviyo_payload", "data", "attributes", "properties"))
@@ -727,12 +743,6 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
             self.write_json(404, {"status": "not_found"})
             return
 
-        if self.config.webhook_secret:
-            supplied_secret = self.headers.get("X-Webhook-Secret", "")
-            if supplied_secret != self.config.webhook_secret:
-                self.write_json(401, {"status": "error", "reason": "invalid_webhook_secret"})
-                return
-
         try:
             payload = self.read_json_body()
             if self.config.log_incoming_payload:
@@ -798,7 +808,6 @@ def config_from_args(args: argparse.Namespace) -> Config:
         revision=args.revision,
         dry_run=args.dry_run,
         min_recommendations=args.min_recommendations,
-        webhook_secret=os.getenv("WEBHOOK_SECRET", ""),
         generic_fallback=args.generic_fallback,
         log_incoming_payload=args.log_incoming_payload,
     )
