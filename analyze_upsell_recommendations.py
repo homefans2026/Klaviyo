@@ -322,6 +322,27 @@ def safe_float(value: object) -> float:
         return 0.0
 
 
+def select_dominant_location(
+    score_map: dict[str, float],
+    *,
+    min_score: float = 6.0,
+    min_ratio: float = 1.25,
+) -> str:
+    if not score_map:
+        return ""
+
+    ordered = sorted(score_map.items(), key=lambda item: (item[1], item[0]), reverse=True)
+    top_label, top_score = ordered[0]
+    if top_score < min_score:
+        return ""
+
+    second_score = ordered[1][1] if len(ordered) > 1 else 0.0
+    if second_score and top_score < second_score * min_ratio:
+        return ""
+
+    return top_label
+
+
 def base_row_title(row: dict[str, object]) -> str:
     return str(row.get("base_product_live_title") or row.get("base_product") or "").strip()
 
@@ -380,6 +401,64 @@ def build_geo_fill_pool(wide_rows: list[dict[str, object]]) -> list[dict[str, ob
     )
 
 
+def apply_base_location_metadata(
+    row: dict[str, object],
+    *,
+    live_title: str = "",
+    url: str = "",
+    url_confidence: str = "",
+    locality: str = "",
+    country: str = "",
+    continent: str = "",
+) -> bool:
+    changed = False
+
+    if live_title and not row.get("base_product_live_title"):
+        row["base_product_live_title"] = live_title
+        changed = True
+
+    if url and not row.get("base_product_url"):
+        row["base_product_url"] = url
+        changed = True
+
+    if url_confidence and not row.get("base_product_url_confidence"):
+        row["base_product_url_confidence"] = url_confidence
+        changed = True
+
+    if locality and not row.get("base_product_locality"):
+        row["base_product_locality"] = locality
+        changed = True
+
+    if country and not row.get("base_product_country"):
+        row["base_product_country"] = country
+        changed = True
+
+    if continent and not row.get("base_product_continent"):
+        row["base_product_continent"] = continent
+        changed = True
+
+    return changed
+
+
+def infer_base_metadata_from_product_lookup(
+    row: dict[str, object],
+    product_geo_lookup: dict[str, dict[str, object]],
+) -> bool:
+    product_geo = product_geo_lookup.get(str(row.get("base_product") or "").strip())
+    if not product_geo:
+        return False
+
+    return apply_base_location_metadata(
+        row,
+        live_title=str(product_geo.get("live_title") or "").strip(),
+        url=str(product_geo.get("url") or "").strip(),
+        url_confidence=str(product_geo.get("url_confidence") or "").strip(),
+        locality=str(product_geo.get("locality") or "").strip(),
+        country=str(product_geo.get("country") or "").strip(),
+        continent=str(product_geo.get("continent") or "").strip(),
+    )
+
+
 def infer_base_metadata_from_geo_pool(row: dict[str, object], geo_pool: list[dict[str, object]]) -> None:
     if row.get("base_product_locality") and row.get("base_product_country") and row.get("base_product_url"):
         return
@@ -403,12 +482,99 @@ def infer_base_metadata_from_geo_pool(row: dict[str, object], geo_pool: list[dic
     if best["normalized_title"] != normalized_base and min(len(best["normalized_title"]), len(normalized_base)) < 14:
         return
 
-    row["base_product_live_title"] = row.get("base_product_live_title") or best["title"]
-    row["base_product_url"] = row.get("base_product_url") or best["url"]
-    row["base_product_url_confidence"] = row.get("base_product_url_confidence") or "geo_inferred"
-    row["base_product_locality"] = row.get("base_product_locality") or best["locality"]
-    row["base_product_country"] = row.get("base_product_country") or best["country"]
-    row["base_product_continent"] = row.get("base_product_continent") or best["continent"]
+    apply_base_location_metadata(
+        row,
+        live_title=best["title"],
+        url=best["url"],
+        url_confidence="geo_inferred",
+        locality=best["locality"],
+        country=best["country"],
+        continent=best["continent"],
+    )
+
+
+def infer_base_metadata_from_behavior(
+    row: dict[str, object],
+    *,
+    active_suggestion_products: set[str],
+    product_geo_lookup: dict[str, dict[str, object]],
+    same_order_pairs: Counter,
+    same_order_pairs_weighted: dict[tuple[str, str], float],
+    later_pairs: Counter,
+    later_pairs_weighted: dict[tuple[str, str], float],
+) -> bool:
+    if row.get("base_product_continent"):
+        return False
+
+    base_product = str(row.get("base_product") or "").strip()
+    if not base_product:
+        return False
+
+    continent_scores: dict[str, float] = defaultdict(float)
+    country_scores: dict[tuple[str, str], float] = defaultdict(float)
+    locality_scores: dict[tuple[str, str, str], float] = defaultdict(float)
+
+    for candidate_product, candidate_geo in product_geo_lookup.items():
+        if candidate_product == base_product or candidate_product not in active_suggestion_products:
+            continue
+
+        candidate_url = str(candidate_geo.get("url") or "").strip()
+        candidate_continent = str(candidate_geo.get("continent") or "").strip()
+        candidate_country = str(candidate_geo.get("country") or "").strip()
+        candidate_locality = str(candidate_geo.get("locality") or "").strip()
+        if not candidate_url or not candidate_continent:
+            continue
+
+        pair = tuple(sorted((base_product, candidate_product)))
+        same_order_count = same_order_pairs.get(pair, 0)
+        same_order_weighted = same_order_pairs_weighted.get(pair, 0.0)
+        later_customer_count = later_pairs.get((base_product, candidate_product), 0)
+        later_customer_weighted = later_pairs_weighted.get((base_product, candidate_product), 0.0)
+        behavior_score = round(
+            (same_order_weighted * 5)
+            + (same_order_count * 4)
+            + (later_customer_weighted * 3)
+            + (later_customer_count * 2),
+            6,
+        )
+        if behavior_score <= 0:
+            continue
+
+        continent_scores[candidate_continent] += behavior_score
+        if candidate_country:
+            country_scores[(candidate_continent, candidate_country)] += behavior_score
+        if candidate_country and candidate_locality:
+            locality_scores[(candidate_continent, candidate_country, candidate_locality)] += behavior_score
+
+    dominant_continent = select_dominant_location(continent_scores)
+    if not dominant_continent:
+        return False
+
+    dominant_country = select_dominant_location(
+        {
+            country: score
+            for (continent, country), score in country_scores.items()
+            if continent == dominant_continent
+        },
+        min_score=6.0,
+        min_ratio=1.2,
+    )
+    dominant_locality = select_dominant_location(
+        {
+            locality: score
+            for (continent, country, locality), score in locality_scores.items()
+            if continent == dominant_continent and country == dominant_country
+        },
+        min_score=8.0,
+        min_ratio=1.2,
+    )
+
+    return apply_base_location_metadata(
+        row,
+        locality=dominant_locality,
+        country=dominant_country,
+        continent=dominant_continent,
+    )
 
 
 def select_geo_fill_candidates(row: dict[str, object], geo_pool: list[dict[str, object]]) -> list[dict[str, object]]:
@@ -494,14 +660,36 @@ def apply_geo_destination_backfills(results: dict[str, object]) -> None:
     detailed_rows = results["detailed_rows"]
     geo_pool = build_geo_fill_pool(wide_rows)
     detailed_template = dict.fromkeys(detailed_rows[0].keys(), "") if detailed_rows else {}
+    product_geo_lookup = results["product_geo_lookup"]
+    same_order_pairs = results["same_order_pairs"]
+    same_order_pairs_weighted = results["same_order_pairs_weighted"]
+    later_pairs = results["later_pairs"]
+    later_pairs_weighted = results["later_pairs_weighted"]
+    active_suggestion_products = results["active_suggestion_products"]
 
     behavior_backed_full_three = sum(1 for row in wide_rows if safe_int(row.get("available_recommendations")) >= 3)
     geo_filled_rows = 0
     geo_filled_slots = 0
     geo_filled_to_full_three = 0
+    title_or_lookup_inferred_rows = 0
+    behavior_location_inferred_rows = 0
 
     for row in wide_rows:
+        had_base_continent = bool(row.get("base_product_continent"))
+        infer_base_metadata_from_product_lookup(row, product_geo_lookup)
         infer_base_metadata_from_geo_pool(row, geo_pool)
+        if not had_base_continent and row.get("base_product_continent"):
+            title_or_lookup_inferred_rows += 1
+        if not row.get("base_product_continent") and infer_base_metadata_from_behavior(
+            row,
+            active_suggestion_products=active_suggestion_products,
+            product_geo_lookup=product_geo_lookup,
+            same_order_pairs=same_order_pairs,
+            same_order_pairs_weighted=same_order_pairs_weighted,
+            later_pairs=later_pairs,
+            later_pairs_weighted=later_pairs_weighted,
+        ):
+            behavior_location_inferred_rows += 1
         available_before = safe_int(row.get("available_recommendations"))
         if available_before >= 3:
             row["needs_manual_fill"] = "no"
@@ -599,6 +787,8 @@ def apply_geo_destination_backfills(results: dict[str, object]) -> None:
     results["geo_filled_rows"] = geo_filled_rows
     results["geo_filled_slots"] = geo_filled_slots
     results["geo_filled_to_full_three"] = geo_filled_to_full_three
+    results["title_or_lookup_inferred_rows"] = title_or_lookup_inferred_rows
+    results["behavior_location_inferred_rows"] = behavior_location_inferred_rows
     results["rows_still_needing_manual_fill"] = sum(1 for row in wide_rows if row["needs_manual_fill"] == "yes")
 
 
@@ -688,7 +878,7 @@ def build_location_name_index(taxonomy: dict[int, dict[str, object]]) -> list[di
     for location_id, row in taxonomy.items():
         for raw_value in {row["name"], row["slug"].replace("-", " ")}:
             normalized = normalize_catalog_text(raw_value)
-            if len(normalized) < 4 or normalized in seen:
+            if len(normalized) < 4 or normalized in LOW_SIGNAL_MATCH_TOKENS or normalized in seen:
                 continue
             seen.add(normalized)
             index.append(
@@ -1095,6 +1285,23 @@ def build_recommendations() -> dict[str, object]:
     active_suggestion_products = {
         product for product, last_seen in product_last_seen.items() if last_seen >= suggestion_window_start
     }
+    product_geo_lookup = {}
+    for product in products:
+        live_match = get_live_match(product)
+        inferred_profile = get_inferred_location_profile(product)
+        resolved_profile = (
+            live_match["live_location_profile"]
+            if live_match and live_match.get("live_location_profile")
+            else inferred_profile
+        )
+        product_geo_lookup[product] = {
+            "live_title": live_match["live_title"] if live_match else "",
+            "url": live_match["live_url"] if live_match else "",
+            "url_confidence": live_match["live_match_confidence"] if live_match else "",
+            "locality": resolved_profile["primary_local"],
+            "country": resolved_profile["primary_country"],
+            "continent": resolved_profile["primary_continent"],
+        }
 
     detailed_rows = []
     wide_rows = []
@@ -1107,6 +1314,7 @@ def build_recommendations() -> dict[str, object]:
         base_order_count = orders_with_product[base_product]
         base_last_seen = product_last_seen[base_product]
         base_live_match = get_live_match(base_product)
+        base_geo = product_geo_lookup[base_product]
         base_trigger_eligible = is_trigger_eligible_product(base_product)
         base_inferred_location_profile = get_inferred_location_profile(base_product)
         base_location_profile = (
@@ -1237,12 +1445,12 @@ def build_recommendations() -> dict[str, object]:
                 "base_order_count": base_order_count,
                 "base_product_last_seen_date": base_last_seen.strftime("%Y-%m-%d"),
                 "base_product_orders_last_12m": product_orders_last_12m[base_product],
-                "base_product_live_title": base_live_match["live_title"] if base_live_match else "",
-                "base_product_url": base_live_match["live_url"] if base_live_match else "",
-                "base_product_url_confidence": base_live_match["live_match_confidence"] if base_live_match else "",
-                "base_product_locality": base_live_match["live_location_local"] if base_live_match else "",
-                "base_product_country": base_live_match["live_location_country"] if base_live_match else "",
-                "base_product_continent": base_live_match["live_location_continent"] if base_live_match else "",
+                "base_product_live_title": base_geo["live_title"],
+                "base_product_url": base_geo["url"],
+                "base_product_url_confidence": base_geo["url_confidence"],
+                "base_product_locality": base_geo["locality"],
+                "base_product_country": base_geo["country"],
+                "base_product_continent": base_geo["continent"],
                 "suggested_customer_count": len(candidate_customers),
                 "suggested_product_last_seen_date": product_last_seen[candidate_product].strftime("%Y-%m-%d"),
                 "suggested_product_orders_last_12m": product_orders_last_12m[candidate_product],
@@ -1325,12 +1533,12 @@ def build_recommendations() -> dict[str, object]:
             "base_product_last_seen_date": base_last_seen.strftime("%Y-%m-%d"),
             "base_product_orders_last_12m": product_orders_last_12m[base_product],
             "base_product_recent_activity_weight": round(product_recent_activity_weight[base_product], 6),
-            "base_product_live_title": base_live_match["live_title"] if base_live_match else "",
-            "base_product_url": base_live_match["live_url"] if base_live_match else "",
-            "base_product_url_confidence": base_live_match["live_match_confidence"] if base_live_match else "",
-            "base_product_locality": base_live_match["live_location_local"] if base_live_match else "",
-            "base_product_country": base_live_match["live_location_country"] if base_live_match else "",
-            "base_product_continent": base_live_match["live_location_continent"] if base_live_match else "",
+            "base_product_live_title": base_geo["live_title"],
+            "base_product_url": base_geo["url"],
+            "base_product_url_confidence": base_geo["url_confidence"],
+            "base_product_locality": base_geo["locality"],
+            "base_product_country": base_geo["country"],
+            "base_product_continent": base_geo["continent"],
             "available_recommendations": len(top_three),
             "needs_manual_fill": "yes" if len(top_three) < 3 else "no",
         }
@@ -1411,6 +1619,11 @@ def build_recommendations() -> dict[str, object]:
         "analysis_end_date": analysis_end_date,
         "suggestion_window_start": suggestion_window_start,
         "active_suggestion_products": active_suggestion_products,
+        "product_geo_lookup": product_geo_lookup,
+        "same_order_pairs": same_order_pairs,
+        "same_order_pairs_weighted": same_order_pairs_weighted,
+        "later_pairs": later_pairs,
+        "later_pairs_weighted": later_pairs_weighted,
         "live_catalog_count": len(live_catalog),
         "location_taxonomy_count": len(location_taxonomy),
     }
@@ -1422,7 +1635,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
         return
 
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -1442,7 +1655,11 @@ def write_summary(results: dict[str, object]) -> None:
     geo_filled_rows = results.get("geo_filled_rows", 0)
     geo_filled_slots = results.get("geo_filled_slots", 0)
     geo_filled_to_full_three = results.get("geo_filled_to_full_three", 0)
+    behavior_location_inferred_rows = results.get("behavior_location_inferred_rows", 0)
     rows_still_needing_manual_fill = results.get("rows_still_needing_manual_fill", 0)
+    inferred_location_without_url_rows = sum(
+        1 for row in wide_rows if row.get("base_product_continent") and not row.get("base_product_url")
+    )
 
     rows_needing_manual_fill = sum(1 for row in wide_rows if row["needs_manual_fill"] == "yes")
     rows_with_full_three = len(wide_rows) - rows_needing_manual_fill
@@ -1481,7 +1698,9 @@ Generated using live Homefans snapshot {live_snapshot_date} from:
 11. Applied a commercial QA filter that keeps same-city, same-country, true ancillary bundles, and only unusually strong broader regional recommendations. Weak same-continent and unknown-location guesses are not exported.
 12. Ranked recommendations inside each proximity bucket by prioritizing strong same-order bundles first, then positively correlated later purchases, then recent activity and freshness inside the last 12 months.
 13. Added Klaviyo email UTM tracking to exported suggestion URLs: `utm_source=klaviyo`, `utm_medium=email`, `utm_campaign=post_purchase_upsell`, and rank-specific `utm_content`.
-14. For base products still short on mapped suggestions after the behavior pass, topped up the remaining slots with active products from the same city first, then same country, then same continent, so post-purchase flows can stay destination-relevant and avoid unnecessary generic emails.
+14. Carried safe location inference into base products even when no direct live URL match was available, so obvious destination titles like `Seoul`, `Porto`, `Argentina`, and `Zagreb` can still use geography-aware fills.
+15. For still-unmatched generic items and add-ons, inferred a dominant destination from real order behavior by weighting their strongest co-purchased and later-purchased matched experiences, then used that recovered continent before falling back to a fully generic email.
+16. For base products still short on mapped suggestions after the behavior pass, topped up the remaining slots with active products from the same city first, then same country, then same continent, so post-purchase flows can stay destination-relevant and avoid unnecessary generic emails.
 
 ## Output files
 - `upsell_recommendations_wide.csv`: one row per base product, with up to 3 suggested products.
@@ -1491,6 +1710,8 @@ Generated using live Homefans snapshot {live_snapshot_date} from:
 
 ## Coverage note
 - {behavior_backed_full_three} products have 3 behavior-backed suggestions before any geography fill.
+- {inferred_location_without_url_rows} base products now carry inferred destination metadata even without a direct live URL match on the purchased product itself.
+- {behavior_location_inferred_rows} additional generic products recovered destination metadata from real order behavior before the final fill stage.
 - {geo_filled_rows} products received geography-based backfills, adding {geo_filled_slots} mapped suggestions in total.
 - {geo_filled_to_full_three} of those products now reach a full 3 mapped suggestions after the geography pass.
 - {rows_still_needing_manual_fill} products still have fewer than 3 mapped suggestions and remain flagged with `needs_manual_fill=yes`.

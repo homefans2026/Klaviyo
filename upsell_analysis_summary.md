@@ -31,7 +31,9 @@ Generated using live Homefans snapshot 2026-04-14 from:
 11. Applied a commercial QA filter that keeps same-city, same-country, true ancillary bundles, and only unusually strong broader regional recommendations. Weak same-continent and unknown-location guesses are not exported.
 12. Ranked recommendations inside each proximity bucket by prioritizing strong same-order bundles first, then positively correlated later purchases, then recent activity and freshness inside the last 12 months.
 13. Added Klaviyo email UTM tracking to exported suggestion URLs: `utm_source=klaviyo`, `utm_medium=email`, `utm_campaign=post_purchase_upsell`, and rank-specific `utm_content`.
-14. For base products still short on mapped suggestions after the behavior pass, topped up the remaining slots with active products from the same city first, then same country, then same continent, so post-purchase flows can stay destination-relevant and avoid unnecessary generic emails.
+14. Carried safe location inference into base products even when no direct live URL match was available, so obvious destination titles like `Seoul`, `Porto`, `Argentina`, and `Zagreb` can still use geography-aware fills.
+15. For still-unmatched generic items and add-ons, inferred a dominant destination from real order behavior by weighting their strongest co-purchased and later-purchased matched experiences, then used that recovered continent before falling back to a fully generic email.
+16. For base products still short on mapped suggestions after the behavior pass, topped up the remaining slots with active products from the same city first, then same country, then same continent, so post-purchase flows can stay destination-relevant and avoid unnecessary generic emails.
 
 ## Output files
 - `upsell_recommendations_wide.csv`: one row per base product, with up to 3 suggested products.
@@ -41,10 +43,12 @@ Generated using live Homefans snapshot 2026-04-14 from:
 
 ## Coverage note
 - 61 products have 3 behavior-backed suggestions before any geography fill.
-- 150 products received geography-based backfills, adding 379 mapped suggestions in total.
-- 147 of those products now reach a full 3 mapped suggestions after the geography pass.
-- 60 products still have fewer than 3 mapped suggestions and remain flagged with `needs_manual_fill=yes`.
-- 208 products now have 3 mapped suggestions in the final export.
+- 21 base products now carry inferred destination metadata even without a direct live URL match on the purchased product itself.
+- 31 additional generic products recovered destination metadata from real order behavior before the final fill stage.
+- 189 products received geography-based backfills, adding 492 mapped suggestions in total.
+- 186 of those products now reach a full 3 mapped suggestions after the geography pass.
+- 21 products still have fewer than 3 mapped suggestions and remain flagged with `needs_manual_fill=yes`.
+- 247 products now have 3 mapped suggestions in the final export.
 
 ## Interpretation notes
 - Positive `phi_coefficient` means the products are positively associated across customers.
