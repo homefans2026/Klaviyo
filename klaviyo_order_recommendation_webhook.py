@@ -554,7 +554,22 @@ def process_order(payload: dict[str, Any], index: RecommendationIndex, config: C
     order_id = extract_order_id(payload)
 
     if not email:
-        return {"status": "error", "reason": "missing_email"}
+        return {
+            "status": "error",
+            "reason": "missing_email",
+            "message": "No customer email found. Expected email or WooCommerce billing.email.",
+            "order_id": order_id,
+            "detected_product_titles": raw_product_titles,
+        }
+    if not raw_product_titles:
+        return {
+            "status": "error",
+            "reason": "missing_product_titles",
+            "message": "No product titles found. Expected product_title or WooCommerce line_items[].name.",
+            "email": email,
+            "order_id": order_id,
+            "detected_product_titles": [],
+        }
     if not product_titles:
         return process_generic_fallback(
             email=email,
@@ -600,6 +615,7 @@ def process_order(payload: dict[str, Any], index: RecommendationIndex, config: C
             "purchased_product": product_title,
             "matched_product": properties.get("matched_product"),
             "available_recommendations": available,
+            "recommendation_mode": properties.get("recommendation_mode"),
             **send_result,
             "klaviyo_payload": event_payload,
         }
@@ -614,6 +630,36 @@ def process_order(payload: dict[str, Any], index: RecommendationIndex, config: C
     )
     result["attempted_products"] = attempted
     return result
+
+
+def log_debug_summary(result: dict[str, Any], payload: dict[str, Any]) -> None:
+    email = clean_string(result.get("email") or extract_email(payload))
+    product_titles = result.get("detected_product_titles")
+    if not isinstance(product_titles, list):
+        product_titles = extract_product_titles(payload, include_generic=True)
+    order_id = clean_string(result.get("order_id") or extract_order_id(payload))
+    recommendation_mode = clean_string(result.get("recommendation_mode"))
+    if not recommendation_mode:
+        event_properties = deep_get(result, ("klaviyo_payload", "data", "attributes", "properties"))
+        if isinstance(event_properties, dict):
+            recommendation_mode = clean_string(event_properties.get("recommendation_mode"))
+    if not recommendation_mode:
+        recommendation_mode = "none"
+
+    print(
+        json.dumps(
+            {
+                "detected_email": email,
+                "detected_product_titles": product_titles,
+                "order_id": order_id,
+                "recommendation_mode": recommendation_mode,
+            },
+            ensure_ascii=False,
+            sort_keys=True,
+        ),
+        file=sys.stderr,
+        flush=True,
+    )
 
 
 def process_generic_fallback(
@@ -697,6 +743,7 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
                     flush=True,
                 )
             result = process_order(payload, self.index, self.config)
+            log_debug_summary(result, payload)
         except json.JSONDecodeError as exc:
             self.write_json(400, {"status": "error", "reason": f"invalid_json: {exc}"})
             return
@@ -707,7 +754,12 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
             self.write_json(500, {"status": "error", "reason": str(exc)})
             return
 
-        status_code = 202 if result.get("status") in {"event_ready", "sent"} else 200
+        if result.get("status") == "error" and result.get("reason") in {"missing_email", "missing_product_titles"}:
+            status_code = 400
+        elif result.get("status") in {"event_ready", "sent"}:
+            status_code = 202
+        else:
+            status_code = 200
         self.write_json(status_code, result)
 
     def read_json_body(self) -> dict[str, Any]:
