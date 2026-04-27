@@ -56,6 +56,7 @@ class Config:
     min_recommendations: int
     webhook_secret: str
     generic_fallback: bool
+    log_incoming_payload: bool
 
 
 @dataclass(frozen=True)
@@ -688,6 +689,13 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
 
         try:
             payload = self.read_json_body()
+            if self.config.log_incoming_payload:
+                print(
+                    "Incoming webhook payload:\n"
+                    + json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False),
+                    file=sys.stderr,
+                    flush=True,
+                )
             result = process_order(payload, self.index, self.config)
         except json.JSONDecodeError as exc:
             self.write_json(400, {"status": "error", "reason": f"invalid_json: {exc}"})
@@ -740,6 +748,7 @@ def config_from_args(args: argparse.Namespace) -> Config:
         min_recommendations=args.min_recommendations,
         webhook_secret=os.getenv("WEBHOOK_SECRET", ""),
         generic_fallback=args.generic_fallback,
+        log_incoming_payload=args.log_incoming_payload,
     )
 
 
@@ -801,6 +810,12 @@ def build_parser() -> argparse.ArgumentParser:
         dest="generic_fallback",
         action="store_false",
         help="Keep old behavior and skip unmapped products.",
+    )
+    parser.add_argument(
+        "--log-incoming-payload",
+        action="store_true",
+        default=env_bool("LOG_INCOMING_PAYLOAD"),
+        help="Temporarily print raw webhook JSON to stderr for Cloud Run debugging.",
     )
     parser.add_argument("--stdin", action="store_true", help="Read one webhook JSON object from stdin.")
     parser.add_argument("--payload-file", help="Read one webhook JSON object from a file.")

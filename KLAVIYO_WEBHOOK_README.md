@@ -60,6 +60,24 @@ export GENERIC_FALLBACK="true"
 
 `GENERIC_FALLBACK=true` means unmapped products still trigger the Klaviyo event with generic recommendations. Use `--no-generic-fallback` if you need the old skip behavior for a test run.
 
+## WooCommerce Payload Support
+
+WooCommerce sends the full order object, not a tiny `{ "email": "...", "product_title": "..." }` payload. The webhook script handles this directly:
+
+- Customer email: `billing.email`
+- Purchased products: `line_items[].name`
+- Order id: `id` or `number`
+
+It also supports common wrapper shapes such as `data.billing.email`, `data.line_items`, `order.billing.email`, and `order.line_items`.
+
+For temporary Cloud Run debugging, enable raw payload logging:
+
+```bash
+export LOG_INCOMING_PAYLOAD="true"
+```
+
+Turn this back off after confirming the WooCommerce payload shape, because the raw order payload can include customer details.
+
 ## Local Dry Run
 
 ```bash
