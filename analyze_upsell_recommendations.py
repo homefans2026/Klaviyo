@@ -308,6 +308,300 @@ def append_utm(url: str, rank: int | None = None) -> str:
     )
 
 
+def safe_int(value: object) -> int:
+    try:
+        return int(float(str(value).strip()))
+    except (TypeError, ValueError):
+        return 0
+
+
+def safe_float(value: object) -> float:
+    try:
+        return float(str(value).strip())
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def base_row_title(row: dict[str, object]) -> str:
+    return str(row.get("base_product_live_title") or row.get("base_product") or "").strip()
+
+
+def suggestion_row_title(row: dict[str, object], rank: int) -> str:
+    return str(row.get(f"suggestion_{rank}_live_title") or row.get(f"suggestion_{rank}") or "").strip()
+
+
+def build_geo_fill_pool(wide_rows: list[dict[str, object]]) -> list[dict[str, object]]:
+    pool_by_key: dict[str, dict[str, object]] = {}
+    for row in wide_rows:
+        if row.get("base_product_trigger_eligible") != "yes":
+            continue
+
+        title = base_row_title(row)
+        url = str(row.get("base_product_url") or "").strip()
+        if not title or not url or title in EXCLUDED_PRODUCTS:
+            continue
+
+        normalized_title = normalize_catalog_text(title)
+        if not normalized_title:
+            continue
+
+        candidate = {
+            "title": title,
+            "normalized_title": normalized_title,
+            "url": url,
+            "url_confidence": str(row.get("base_product_url_confidence") or "").strip(),
+            "locality": str(row.get("base_product_locality") or "").strip(),
+            "country": str(row.get("base_product_country") or "").strip(),
+            "continent": str(row.get("base_product_continent") or "").strip(),
+            "orders_last_12m": safe_int(row.get("base_product_orders_last_12m")),
+            "recent_activity_weight": safe_float(row.get("base_product_recent_activity_weight")),
+            "last_seen_date": str(row.get("base_product_last_seen_date") or "").strip(),
+        }
+        key = url or normalized_title
+        existing = pool_by_key.get(key)
+        if existing is None or (
+            candidate["orders_last_12m"],
+            candidate["recent_activity_weight"],
+            candidate["title"],
+        ) > (
+            existing["orders_last_12m"],
+            existing["recent_activity_weight"],
+            existing["title"],
+        ):
+            pool_by_key[key] = candidate
+
+    return sorted(
+        pool_by_key.values(),
+        key=lambda candidate: (
+            -candidate["orders_last_12m"],
+            -candidate["recent_activity_weight"],
+            candidate["title"],
+        ),
+    )
+
+
+def infer_base_metadata_from_geo_pool(row: dict[str, object], geo_pool: list[dict[str, object]]) -> None:
+    if row.get("base_product_locality") and row.get("base_product_country") and row.get("base_product_url"):
+        return
+
+    base_title = base_row_title(row)
+    normalized_base = normalize_catalog_text(base_title)
+    if not normalized_base:
+        return
+
+    candidates = [
+        candidate
+        for candidate in geo_pool
+        if candidate["normalized_title"] == normalized_base
+        or candidate["normalized_title"].startswith(normalized_base)
+        or normalized_base.startswith(candidate["normalized_title"])
+    ]
+    if not candidates:
+        return
+
+    best = candidates[0]
+    if best["normalized_title"] != normalized_base and min(len(best["normalized_title"]), len(normalized_base)) < 14:
+        return
+
+    row["base_product_live_title"] = row.get("base_product_live_title") or best["title"]
+    row["base_product_url"] = row.get("base_product_url") or best["url"]
+    row["base_product_url_confidence"] = row.get("base_product_url_confidence") or "geo_inferred"
+    row["base_product_locality"] = row.get("base_product_locality") or best["locality"]
+    row["base_product_country"] = row.get("base_product_country") or best["country"]
+    row["base_product_continent"] = row.get("base_product_continent") or best["continent"]
+
+
+def select_geo_fill_candidates(row: dict[str, object], geo_pool: list[dict[str, object]]) -> list[dict[str, object]]:
+    base_title = base_row_title(row)
+    base_url = str(row.get("base_product_url") or "").strip()
+    base_locality = normalize_catalog_text(str(row.get("base_product_locality") or ""))
+    base_country = normalize_catalog_text(str(row.get("base_product_country") or ""))
+    base_continent = normalize_catalog_text(str(row.get("base_product_continent") or ""))
+
+    existing_titles = {normalize_catalog_text(base_title)}
+    existing_urls = {base_url} if base_url else set()
+    for rank in range(1, 4):
+        suggestion_title = suggestion_row_title(row, rank)
+        suggestion_url = str(row.get(f"suggestion_{rank}_url_clean") or row.get(f"suggestion_{rank}_url") or "").strip()
+        if suggestion_title:
+            existing_titles.add(normalize_catalog_text(suggestion_title))
+        if suggestion_url:
+            existing_urls.add(suggestion_url)
+
+    tiers: list[tuple[str, str, str, int, object]] = []
+    if base_locality:
+        tiers.append(
+            (
+                "same_city",
+                "geo_destination_fill_same_city",
+                "approved_geo_fill_same_city",
+                0,
+                lambda candidate: normalize_catalog_text(candidate["locality"]) == base_locality,
+            )
+        )
+    if base_country:
+        tiers.append(
+            (
+                "same_country",
+                "geo_destination_fill_same_country",
+                "approved_geo_fill_same_country",
+                1,
+                lambda candidate: normalize_catalog_text(candidate["country"]) == base_country,
+            )
+        )
+    if base_continent:
+        tiers.append(
+            (
+                "same_continent",
+                "geo_destination_fill_same_continent",
+                "approved_geo_fill_same_continent",
+                3,
+                lambda candidate: normalize_catalog_text(candidate["continent"]) == base_continent,
+            )
+        )
+
+    needed = max(0, 3 - safe_int(row.get("available_recommendations")))
+    selected: list[dict[str, object]] = []
+    for location_label, basis, commercial_review, priority_bucket, predicate in tiers:
+        for candidate in geo_pool:
+            if len(selected) >= needed:
+                return selected
+            if candidate["normalized_title"] in existing_titles:
+                continue
+            if candidate["url"] in existing_urls:
+                continue
+            if not predicate(candidate):
+                continue
+
+            selected.append(
+                {
+                    **candidate,
+                    "recommendation_basis": basis,
+                    "commercial_review": commercial_review,
+                    "location_proximity": location_label,
+                    "location_priority_bucket": priority_bucket,
+                    "confidence_flag": "low",
+                }
+            )
+            existing_titles.add(candidate["normalized_title"])
+            existing_urls.add(candidate["url"])
+
+    return selected
+
+
+def apply_geo_destination_backfills(results: dict[str, object]) -> None:
+    wide_rows = results["wide_rows"]
+    detailed_rows = results["detailed_rows"]
+    geo_pool = build_geo_fill_pool(wide_rows)
+    detailed_template = dict.fromkeys(detailed_rows[0].keys(), "") if detailed_rows else {}
+
+    behavior_backed_full_three = sum(1 for row in wide_rows if safe_int(row.get("available_recommendations")) >= 3)
+    geo_filled_rows = 0
+    geo_filled_slots = 0
+    geo_filled_to_full_three = 0
+
+    for row in wide_rows:
+        infer_base_metadata_from_geo_pool(row, geo_pool)
+        available_before = safe_int(row.get("available_recommendations"))
+        if available_before >= 3:
+            row["needs_manual_fill"] = "no"
+            row["available_recommendations"] = available_before
+            continue
+
+        geo_fill_candidates = select_geo_fill_candidates(row, geo_pool)
+        if not geo_fill_candidates:
+            row["needs_manual_fill"] = "yes"
+            row["available_recommendations"] = available_before
+            continue
+
+        geo_filled_rows += 1
+        geo_filled_slots += len(geo_fill_candidates)
+
+        for rank_offset, candidate in enumerate(geo_fill_candidates, start=available_before + 1):
+            row.update(
+                {
+                    f"suggestion_{rank_offset}": candidate["title"],
+                    f"suggestion_{rank_offset}_basis": candidate["recommendation_basis"],
+                    f"suggestion_{rank_offset}_commercial_review": candidate["commercial_review"],
+                    f"suggestion_{rank_offset}_phi": "",
+                    f"suggestion_{rank_offset}_lift": "",
+                    f"suggestion_{rank_offset}_recency_weighted_score": round(candidate["recent_activity_weight"], 6),
+                    f"suggestion_{rank_offset}_location_proximity": candidate["location_proximity"],
+                    f"suggestion_{rank_offset}_locality": candidate["locality"],
+                    f"suggestion_{rank_offset}_country": candidate["country"],
+                    f"suggestion_{rank_offset}_continent": candidate["continent"],
+                    f"suggestion_{rank_offset}_live_title": candidate["title"],
+                    f"suggestion_{rank_offset}_url_clean": candidate["url"],
+                    f"suggestion_{rank_offset}_url": append_utm(candidate["url"], rank_offset),
+                    f"suggestion_{rank_offset}_url_match_score": "",
+                    f"suggestion_{rank_offset}_url_match_gap": "",
+                    f"suggestion_{rank_offset}_url_confidence": candidate["url_confidence"] or "high",
+                    f"suggestion_{rank_offset}_last_seen_date": candidate["last_seen_date"],
+                    f"suggestion_{rank_offset}_orders_last_12m": candidate["orders_last_12m"],
+                    f"suggestion_{rank_offset}_recent_activity_weight": round(candidate["recent_activity_weight"], 6),
+                    f"suggestion_{rank_offset}_later_customers": "",
+                    f"suggestion_{rank_offset}_later_weighted_12m": "",
+                    f"suggestion_{rank_offset}_post_purchase_rate": "",
+                    f"suggestion_{rank_offset}_same_order_count": "",
+                    f"suggestion_{rank_offset}_same_order_weighted_12m": "",
+                    f"suggestion_{rank_offset}_confidence": candidate["confidence_flag"],
+                }
+            )
+
+            if detailed_template:
+                detailed_row = {**detailed_template}
+                detailed_row.update(
+                    {
+                        "rank": rank_offset,
+                        "base_product": row["base_product"],
+                        "suggested_product": candidate["title"],
+                        "recommendation_basis": candidate["recommendation_basis"],
+                        "commercial_review": candidate["commercial_review"],
+                        "location_priority_bucket": candidate["location_priority_bucket"],
+                        "location_proximity": candidate["location_proximity"],
+                        "priority_bucket": 98 + candidate["location_priority_bucket"],
+                        "score": round(candidate["recent_activity_weight"], 6),
+                        "base_customer_count": row["base_customer_count"],
+                        "base_order_count": row["base_order_count"],
+                        "base_product_last_seen_date": row["base_product_last_seen_date"],
+                        "base_product_orders_last_12m": row["base_product_orders_last_12m"],
+                        "base_product_live_title": row["base_product_live_title"],
+                        "base_product_url": row["base_product_url"],
+                        "base_product_url_confidence": row["base_product_url_confidence"],
+                        "base_product_locality": row["base_product_locality"],
+                        "base_product_country": row["base_product_country"],
+                        "base_product_continent": row["base_product_continent"],
+                        "suggested_product_last_seen_date": candidate["last_seen_date"],
+                        "suggested_product_orders_last_12m": candidate["orders_last_12m"],
+                        "suggested_product_recent_activity_weight": round(candidate["recent_activity_weight"], 6),
+                        "suggested_product_live_title": candidate["title"],
+                        "suggested_product_url": append_utm(candidate["url"], rank_offset),
+                        "suggested_product_url_match_score": "",
+                        "suggested_product_url_match_gap": "",
+                        "suggested_product_url_confidence": candidate["url_confidence"] or "high",
+                        "suggested_product_locality": candidate["locality"],
+                        "suggested_product_country": candidate["country"],
+                        "suggested_product_continent": candidate["continent"],
+                        "recency_weighted_score": round(candidate["recent_activity_weight"], 6),
+                        "confidence_flag": candidate["confidence_flag"],
+                        "suggested_product_url_clean": candidate["url"],
+                    }
+                )
+                detailed_rows.append(detailed_row)
+
+        available_after = available_before + len(geo_fill_candidates)
+        if available_before < 3 and available_after >= 3:
+            geo_filled_to_full_three += 1
+        row["available_recommendations"] = available_after
+        row["needs_manual_fill"] = "yes" if available_after < 3 else "no"
+
+    results["behavior_backed_full_three"] = behavior_backed_full_three
+    results["geo_filled_rows"] = geo_filled_rows
+    results["geo_filled_slots"] = geo_filled_slots
+    results["geo_filled_to_full_three"] = geo_filled_to_full_three
+    results["rows_still_needing_manual_fill"] = sum(1 for row in wide_rows if row["needs_manual_fill"] == "yes")
+
+
 def load_location_taxonomy() -> dict[int, dict[str, object]]:
     if not LOCATION_TAXONOMY_PATH.exists():
         return {}
@@ -1144,6 +1438,11 @@ def write_summary(results: dict[str, object]) -> None:
     active_suggestion_products = results["active_suggestion_products"]
     live_catalog_count = results["live_catalog_count"]
     location_taxonomy_count = results["location_taxonomy_count"]
+    behavior_backed_full_three = results.get("behavior_backed_full_three", 0)
+    geo_filled_rows = results.get("geo_filled_rows", 0)
+    geo_filled_slots = results.get("geo_filled_slots", 0)
+    geo_filled_to_full_three = results.get("geo_filled_to_full_three", 0)
+    rows_still_needing_manual_fill = results.get("rows_still_needing_manual_fill", 0)
 
     rows_needing_manual_fill = sum(1 for row in wide_rows if row["needs_manual_fill"] == "yes")
     rows_with_full_three = len(wide_rows) - rows_needing_manual_fill
@@ -1182,6 +1481,7 @@ Generated using live Homefans snapshot {live_snapshot_date} from:
 11. Applied a commercial QA filter that keeps same-city, same-country, true ancillary bundles, and only unusually strong broader regional recommendations. Weak same-continent and unknown-location guesses are not exported.
 12. Ranked recommendations inside each proximity bucket by prioritizing strong same-order bundles first, then positively correlated later purchases, then recent activity and freshness inside the last 12 months.
 13. Added Klaviyo email UTM tracking to exported suggestion URLs: `utm_source=klaviyo`, `utm_medium=email`, `utm_campaign=post_purchase_upsell`, and rank-specific `utm_content`.
+14. For base products still short on mapped suggestions after the behavior pass, topped up the remaining slots with active products from the same city first, then same country, then same continent, so post-purchase flows can stay destination-relevant and avoid unnecessary generic emails.
 
 ## Output files
 - `upsell_recommendations_wide.csv`: one row per base product, with up to 3 suggested products.
@@ -1190,8 +1490,11 @@ Generated using live Homefans snapshot {live_snapshot_date} from:
 - `homefans_location_taxonomy_2026-04-14.json`: taxonomy snapshot used for location proximity scoring.
 
 ## Coverage note
-- {rows_with_full_three} products have 3 data-backed suggestions.
-- {rows_needing_manual_fill} products have fewer than 3 recommendations in this export and are flagged with `needs_manual_fill=yes`.
+- {behavior_backed_full_three} products have 3 behavior-backed suggestions before any geography fill.
+- {geo_filled_rows} products received geography-based backfills, adding {geo_filled_slots} mapped suggestions in total.
+- {geo_filled_to_full_three} of those products now reach a full 3 mapped suggestions after the geography pass.
+- {rows_still_needing_manual_fill} products still have fewer than 3 mapped suggestions and remain flagged with `needs_manual_fill=yes`.
+- {rows_with_full_three} products now have 3 mapped suggestions in the final export.
 
 ## Interpretation notes
 - Positive `phi_coefficient` means the products are positively associated across customers.
@@ -1200,6 +1503,7 @@ Generated using live Homefans snapshot {live_snapshot_date} from:
 - Suggested products in the exported sheet now also carry their matched live Homefans URL, matched live title, a `location_proximity` label, a `commercial_review` label, and a `recency_weighted_score` that reflects both behavioral fit and recent sales momentum.
 - `suggestion_*_url` is the Klaviyo-ready UTM-tagged URL. `suggestion_*_url_clean` preserves the original Homefans product URL used during live-link validation.
 - Repeat-purchase behavior is sparse for many flagship experiences, so immediate post-purchase Klaviyo flows will likely perform best with `same_order_bundle` suggestions and only secondarily with `later_lifecycle` suggestions.
+- Any `geo_destination_fill_*` basis in the export indicates the slot was filled by geographic relevance rather than observed customer overlap, specifically to reduce fallback usage in the general-email branch.
 """
 
     (OUTPUT_DIR / "upsell_analysis_summary.md").write_text(summary, encoding="utf-8")
@@ -1208,6 +1512,7 @@ Generated using live Homefans snapshot {live_snapshot_date} from:
 def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     results = build_recommendations()
+    apply_geo_destination_backfills(results)
     write_csv(OUTPUT_DIR / "upsell_recommendations_wide.csv", results["wide_rows"])
     write_csv(OUTPUT_DIR / "upsell_recommendations_detailed.csv", results["detailed_rows"])
     write_summary(results)

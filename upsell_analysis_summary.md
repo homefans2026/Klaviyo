@@ -31,18 +31,20 @@ Generated using live Homefans snapshot 2026-04-14 from:
 11. Applied a commercial QA filter that keeps same-city, same-country, true ancillary bundles, and only unusually strong broader regional recommendations. Weak same-continent and unknown-location guesses are not exported.
 12. Ranked recommendations inside each proximity bucket by prioritizing strong same-order bundles first, then positively correlated later purchases, then recent activity and freshness inside the last 12 months.
 13. Added Klaviyo email UTM tracking to exported suggestion URLs: `utm_source=klaviyo`, `utm_medium=email`, `utm_campaign=post_purchase_upsell`, and rank-specific `utm_content`.
+14. For base products still short on mapped suggestions after the behavior pass, topped up the remaining slots with active products from the same city first, then same country, then same continent, so post-purchase flows can stay destination-relevant and avoid unnecessary generic emails.
 
 ## Output files
 - `upsell_recommendations_wide.csv`: one row per base product, with up to 3 suggested products.
 - `upsell_recommendations_detailed.csv`: one row per base product / suggestion pair with all supporting metrics.
-- `homefans_link_audit_2026-04-20.csv`: live HTTP validation for every exported product URL.
 - `homefans_live_product_catalog_2026-04-14.json`: live catalog snapshot used for URL enrichment.
 - `homefans_location_taxonomy_2026-04-14.json`: taxonomy snapshot used for location proximity scoring.
 
 ## Coverage note
-- 61 products have 3 data-backed suggestions.
-- 207 products have fewer than 3 recommendations in this export and are flagged with `needs_manual_fill=yes`.
-- 357 exported URL entries were checked live on 2026-04-20; all 357 returned working 2xx/3xx responses.
+- 61 products have 3 behavior-backed suggestions before any geography fill.
+- 150 products received geography-based backfills, adding 379 mapped suggestions in total.
+- 147 of those products now reach a full 3 mapped suggestions after the geography pass.
+- 60 products still have fewer than 3 mapped suggestions and remain flagged with `needs_manual_fill=yes`.
+- 208 products now have 3 mapped suggestions in the final export.
 
 ## Interpretation notes
 - Positive `phi_coefficient` means the products are positively associated across customers.
@@ -51,3 +53,4 @@ Generated using live Homefans snapshot 2026-04-14 from:
 - Suggested products in the exported sheet now also carry their matched live Homefans URL, matched live title, a `location_proximity` label, a `commercial_review` label, and a `recency_weighted_score` that reflects both behavioral fit and recent sales momentum.
 - `suggestion_*_url` is the Klaviyo-ready UTM-tagged URL. `suggestion_*_url_clean` preserves the original Homefans product URL used during live-link validation.
 - Repeat-purchase behavior is sparse for many flagship experiences, so immediate post-purchase Klaviyo flows will likely perform best with `same_order_bundle` suggestions and only secondarily with `later_lifecycle` suggestions.
+- Any `geo_destination_fill_*` basis in the export indicates the slot was filled by geographic relevance rather than observed customer overlap, specifically to reduce fallback usage in the general-email branch.
