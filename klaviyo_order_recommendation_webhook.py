@@ -76,8 +76,10 @@ class NormalizedOrderPayload:
 
 @dataclass(frozen=True)
 class ParsedWebhookBody:
-    payload: dict[str, Any]
+    payload: dict[str, Any] | None
     raw_body: str
+    content_type: str
+    content_length: int
 
 
 def env_bool(name: str, default: bool = False) -> bool:
@@ -749,11 +751,23 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
             self.write_json(404, {"status": "not_found"})
             return
 
-        parsed_body: ParsedWebhookBody | None = None
         try:
-            parsed_body = self.read_json_body()
+            parsed_body = self.read_webhook_body()
             payload = parsed_body.payload
-            self.log_request_debug(payload, parsed_body.raw_body)
+            self.log_request_debug(parsed_body)
+            if payload is None:
+                reason = "empty_or_non_json_body"
+                self.log_400_reason(reason)
+                self.write_json(
+                    400,
+                    {
+                        "status": "error",
+                        "reason": reason,
+                        "content_type": parsed_body.content_type,
+                        "body_preview": parsed_body.raw_body[:1000],
+                    },
+                )
+                return
             if self.config.log_incoming_payload:
                 print(
                     "Incoming webhook payload:\n"
@@ -763,13 +777,6 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
                 )
             result = process_order(payload, self.index, self.config)
             log_debug_summary(result, payload)
-        except json.JSONDecodeError as exc:
-            reason = f"invalid_json: {exc}"
-            if parsed_body is None:
-                self.log_request_debug({}, getattr(exc, "doc", "")[:2000])
-            self.log_400_reason(reason)
-            self.write_json(400, {"status": "error", "reason": reason})
-            return
         except ValueError as exc:
             reason = str(exc)
             self.log_400_reason(reason)
@@ -788,36 +795,61 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
             status_code = 200
         self.write_json(status_code, result)
 
-    def read_json_body(self) -> ParsedWebhookBody:
+    def read_webhook_body(self) -> ParsedWebhookBody:
         raw_length = self.headers.get("Content-Length", "0")
         try:
             length = int(raw_length)
         except ValueError:
             length = 0
-        if length <= 0:
-            raise json.JSONDecodeError("empty body", "", 0)
         if length > MAX_WEBHOOK_BYTES:
             raise ValueError("webhook payload is too large")
-        body = self.rfile.read(length)
-        raw_body = body.decode("utf-8")
-        payload = json.loads(raw_body)
-        if not isinstance(payload, dict):
-            raise ValueError("webhook payload must be a JSON object")
-        return ParsedWebhookBody(payload=payload, raw_body=raw_body)
+        body = self.rfile.read(max(length, 0))
+        raw_body = body.decode("utf-8", errors="replace")
+        content_type = self.headers.get("Content-Type", "")
+        payload = self.parse_json_payload(raw_body, content_type)
+        return ParsedWebhookBody(
+            payload=payload,
+            raw_body=raw_body,
+            content_type=content_type,
+            content_length=length,
+        )
 
-    def log_request_debug(self, payload: dict[str, Any], raw_body: str) -> None:
+    @staticmethod
+    def parse_json_payload(raw_body: str, content_type: str) -> dict[str, Any] | None:
+        body = raw_body.strip()
+        if not body:
+            return None
+
+        payload: Any = None
+        if "json" in content_type.lower():
+            try:
+                payload = json.loads(body)
+            except json.JSONDecodeError:
+                payload = None
+
+        if payload is None:
+            try:
+                payload = json.loads(body)
+            except json.JSONDecodeError:
+                return None
+
+        return payload if isinstance(payload, dict) else None
+
+    def log_request_debug(self, parsed_body: ParsedWebhookBody) -> None:
         x_wc_headers = {
             key: value
             for key, value in self.headers.items()
             if key.lower().startswith("x-wc-")
         }
+        payload = parsed_body.payload or {}
         print(
             json.dumps(
                 {
-                    "request_content_type": self.headers.get("Content-Type", ""),
-                    "x_wc_headers": x_wc_headers,
+                    "content_length": parsed_body.content_length,
+                    "content_type": parsed_body.content_type,
                     "parsed_json_payload_keys": sorted(payload.keys()),
-                    "raw_json_payload_first_2000": raw_body[:2000],
+                    "raw_body_first_1000": parsed_body.raw_body[:1000],
+                    "x_wc_headers": x_wc_headers,
                 },
                 ensure_ascii=False,
                 sort_keys=True,
