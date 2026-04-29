@@ -253,6 +253,10 @@ def normalize_order_payload(payload: dict[str, Any]) -> NormalizedOrderPayload:
     )
 
 
+def is_minimal_woo_payload(payload: dict[str, Any]) -> bool:
+    return set(payload.keys()) == {"id"} and bool(clean_string(payload.get("id")))
+
+
 class RecommendationIndex:
     def __init__(self, csv_path: Path):
         self.csv_path = csv_path
@@ -757,14 +761,27 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
             self.log_request_debug(parsed_body)
             if payload is None:
                 reason = "empty_or_non_json_body"
-                self.log_400_reason(reason)
+                self.log_non_failing_webhook_reason(reason)
                 self.write_json(
-                    400,
+                    200,
                     {
                         "status": "error",
                         "reason": reason,
                         "content_type": parsed_body.content_type,
                         "body_preview": parsed_body.raw_body[:1000],
+                    },
+                )
+                return
+            if is_minimal_woo_payload(payload):
+                order_id = extract_order_id(payload)
+                self.log_non_failing_webhook_reason("received minimal Woo payload")
+                self.write_json(
+                    200,
+                    {
+                        "status": "ignored",
+                        "reason": "minimal_woo_payload",
+                        "message": "received minimal Woo payload",
+                        "order_id": order_id,
                     },
                 )
                 return
@@ -786,9 +803,14 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
             self.write_json(500, {"status": "error", "reason": str(exc)})
             return
 
-        if result.get("status") == "error" and result.get("reason") in {"missing_email", "missing_product_titles"}:
+        normalized_payload = normalize_order_payload(payload)
+        if (
+            result.get("status") == "error"
+            and not normalized_payload.email
+            and not normalized_payload.product_titles
+        ):
             status_code = 400
-            self.log_400_reason(str(result.get("reason") or "validation_error"))
+            self.log_400_reason("missing_email_and_product_info")
         elif result.get("status") in {"event_ready", "sent"}:
             status_code = 202
         else:
@@ -848,7 +870,7 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
                     "content_length": parsed_body.content_length,
                     "content_type": parsed_body.content_type,
                     "parsed_json_payload_keys": sorted(payload.keys()),
-                    "raw_body_first_1000": parsed_body.raw_body[:1000],
+                    "raw_body": parsed_body.raw_body[:1000],
                     "x_wc_headers": x_wc_headers,
                 },
                 ensure_ascii=False,
@@ -862,6 +884,14 @@ class RecommendationWebhookHandler(BaseHTTPRequestHandler):
     def log_400_reason(reason: str) -> None:
         print(
             json.dumps({"returning_400_reason": reason}, sort_keys=True),
+            file=sys.stderr,
+            flush=True,
+        )
+
+    @staticmethod
+    def log_non_failing_webhook_reason(reason: str) -> None:
+        print(
+            json.dumps({"webhook_acknowledged_reason": reason}, sort_keys=True),
             file=sys.stderr,
             flush=True,
         )
