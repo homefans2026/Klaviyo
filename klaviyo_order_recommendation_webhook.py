@@ -44,6 +44,8 @@ GENERIC_PRODUCT_TITLES = {
     "tickets",
     "general ticket sale",
 }
+BLOCKED_EMAIL_DOMAINS = {"homefans.com", "homefans.net"}
+EMAIL_PATTERN = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
 
 @dataclass(frozen=True)
@@ -118,6 +120,21 @@ def first_nonempty(*values: Any) -> str:
         if cleaned:
             return cleaned
     return ""
+
+
+def email_domain(email: str) -> str:
+    cleaned = clean_string(email).lower()
+    if "@" not in cleaned:
+        return ""
+    return cleaned.rsplit("@", 1)[-1]
+
+
+def is_valid_email(email: str) -> bool:
+    return bool(EMAIL_PATTERN.fullmatch(clean_string(email).lower()))
+
+
+def is_blocked_email(email: str) -> bool:
+    return email_domain(email) in BLOCKED_EMAIL_DOMAINS
 
 
 def dedupe(values: list[str]) -> list[str]:
@@ -587,6 +604,27 @@ def process_order(payload: dict[str, Any], index: RecommendationIndex, config: C
             "message": "No customer email found. Expected email or WooCommerce billing.email.",
             "order_id": order_id,
             "detected_product_titles": raw_product_titles,
+        }
+    if not is_valid_email(email):
+        return {
+            "status": "no_event",
+            "reason": "invalid_email",
+            "message": "Webhook acknowledged, but no Klaviyo event was sent because the email is invalid.",
+            "email": email,
+            "order_id": order_id,
+            "detected_product_titles": raw_product_titles,
+            "recommendation_mode": "blocked",
+        }
+    if is_blocked_email(email):
+        return {
+            "status": "no_event",
+            "reason": "blocked_email_domain",
+            "message": "Webhook acknowledged, but no Klaviyo event was sent for an internal Homefans email domain.",
+            "email": email,
+            "blocked_email_domain": email_domain(email),
+            "order_id": order_id,
+            "detected_product_titles": raw_product_titles,
+            "recommendation_mode": "blocked",
         }
     if not raw_product_titles:
         return {
